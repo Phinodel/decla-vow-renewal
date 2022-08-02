@@ -1,18 +1,18 @@
 import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import HomeModule from '../components/home';
+import ContactModule from '../components/contact';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'saveTheDate'])),
+      ...(await serverSideTranslations(locale || 'en-GB', ['common'])),
     },
   };
 };
 
-const Home: NextPage = () => {
-  return <HomeModule />;
+const Contact: NextPage = () => {
+  return <ContactModule />;
 };
 
-export default Home;
+export default Contact;
