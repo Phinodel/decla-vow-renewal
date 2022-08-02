@@ -98,6 +98,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
+    font-family: ${font.family.secondary};
     font-size: ${font.sizes.titlesMobile.h1};
     color: ${colors.secondary};
 
@@ -107,6 +108,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
+    font-family: ${font.family.secondary};
     font-size: ${font.sizes.titlesMobile.h2};
     color: ${colors.primary};
 
@@ -116,6 +118,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
+    font-family: ${font.family.secondary};
     font-size: ${font.sizes.titlesMobile.h3};
 
     @media (min-width: ${breakpoints.tablet}px) {
@@ -124,6 +127,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h4 {
+    font-family: ${font.family.secondary};
     font-size: ${font.sizes.titlesMobile.h4};
 
     @media (min-width: ${breakpoints.tablet}px) {
@@ -132,6 +136,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h5 {
+    font-family: ${font.family.secondary};
     font-size: ${font.sizes.titlesMobile.h5};
 
     @media (min-width: ${breakpoints.tablet}px) {
@@ -140,6 +145,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h6 {
+    font-family: ${font.family.secondary};
     font-size: ${font.sizes.titlesMobile.h6};
 
     @media (min-width: ${breakpoints.tablet}px) {

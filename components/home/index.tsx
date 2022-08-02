@@ -1,41 +1,46 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'next-i18next';
+
 import Link from 'next/link';
 import Image from 'next/image';
-// import Styled from './styles';
+import Styled from './styles';
 
 {
   /* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />; */
 }
 
-const HomeModule: FC = () => (
-  <>
-    <div>
-      <h1>
-        <span>Save</span>
-        <span>the date</span>
-      </h1>
-      <h2>13/04/24</h2>
-    </div>
-    <div>
-      <h3>Who</h3>
-      <p>Delphine Claerhout &amp; Pierre De Conto</p>
-      <p>and hopefully you too</p>
-      <p>paper invitation to follow</p>
-    </div>
-    <div>
-      <h3>What</h3>
-      <p>
-        We would like to invite you to our vow renewal on 13/04/2024 (our fifth wedding anniversary). There is a small
-        ceremony planned, followed by dinner and an afterparty to celebrate.
-      </p>
-      <p>more details coming soon...</p>
-    </div>
-    <div>
-      <h3>Where</h3>
-      <p>t'Verstand van leven</p>
-      <p>Sint-Kornelisplein 20, 9667 Horebeke, Belgium</p>
-    </div>
-  </>
-);
+const HomeModule: FC = () => {
+  const { t } = useTranslation('saveTheDate');
+
+  return (
+    <>
+      <Styled.Header>
+        <div>
+          <h1>
+            <span>{t('title')}</span>
+            <span>{t('subtitle')}</span>
+          </h1>
+          <h2>{t('date')}</h2>
+        </div>
+      </Styled.Header>
+      <Styled.WhoSection>
+        <h3>{t('who-title')}</h3>
+        <p>{t('who-text1')}</p>
+        <p>{t('who-text2')}</p>
+        <p>{t('who-text3')}</p>
+      </Styled.WhoSection>
+      <Styled.WhatSection>
+        <h3>{t('what-title')}</h3>
+        <p>{t('what-text1')}</p>
+        <p>{t('what-text2')}</p>
+      </Styled.WhatSection>
+      <Styled.WhereSection>
+        <h3>{t('where-title')}</h3>
+        <p>{t('where-location-name')}</p>
+        <p>{t('where-location-address')}</p>
+      </Styled.WhereSection>
+    </>
+  );
+};
 
 export default HomeModule;
