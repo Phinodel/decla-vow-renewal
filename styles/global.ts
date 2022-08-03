@@ -72,6 +72,7 @@ export const GlobalStyle = createGlobalStyle`
   /* END OF RESET */
 
   html, body {
+    position: relative;
     background: ${colors.white};
     font-family: ${font.family.primary};
     font-weight: 400;

@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
+
 import Styled from './styles';
 
 const Header: FC = () => {
@@ -9,27 +11,33 @@ const Header: FC = () => {
   const { pathname } = useRouter();
 
   return (
-    <Styled.Container>
-      <Styled.Wrapper>
-        <ul>
-          <Link href={pathname} locale="en-GB" passHref>
-            <a>{t('lang-en')}</a>
-          </Link>
+    <>
+      <Styled.Container>
+        <Styled.Wrapper>
+          <ul>
+            <Link href={pathname} locale="en-GB" passHref>
+              <a>{t('lang-en')}</a>
+            </Link>
 
-          <li>/</li>
+            <li>/</li>
 
-          <Link href={pathname} locale="nl-BE" passHref>
-            <a>{t('lang-nl')}</a>
-          </Link>
+            <Link href={pathname} locale="nl-BE" passHref>
+              <a>{t('lang-nl')}</a>
+            </Link>
 
-          <li>/</li>
+            <li>/</li>
 
-          <Link href={pathname} locale="fr" passHref>
-            <a>{t('lang-fr')}</a>
-          </Link>
-        </ul>
-      </Styled.Wrapper>
-    </Styled.Container>
+            <Link href={pathname} locale="fr" passHref>
+              <a>{t('lang-fr')}</a>
+            </Link>
+          </ul>
+        </Styled.Wrapper>
+      </Styled.Container>
+
+      <Styled.Background>
+        <Styled.BackgroundLeafs />
+      </Styled.Background>
+    </>
   );
 };
 
