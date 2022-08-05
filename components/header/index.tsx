@@ -2,34 +2,39 @@ import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
 
 import Styled from './styles';
 
 const Header: FC = () => {
   const { t } = useTranslation('common');
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
+
+  const createLocaleLink = (lang: 'en-GB' | 'nl-BE' | 'fr') => {
+    const isActive = lang === locale;
+
+    return (
+      <li className={isActive ? 'active' : 'link'}>
+        <Link href={pathname} locale={lang} passHref>
+          <a>{t(`lang-${lang}`)}</a>
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <>
       <Styled.Container>
         <Styled.Wrapper>
           <ul>
-            <Link href={pathname} locale="en-GB" passHref>
-              <a>{t('lang-en')}</a>
-            </Link>
+            {createLocaleLink('en-GB')}
 
             <li>/</li>
 
-            <Link href={pathname} locale="nl-BE" passHref>
-              <a>{t('lang-nl')}</a>
-            </Link>
+            {createLocaleLink('nl-BE')}
 
             <li>/</li>
 
-            <Link href={pathname} locale="fr" passHref>
-              <a>{t('lang-fr')}</a>
-            </Link>
+            {createLocaleLink('fr')}
           </ul>
         </Styled.Wrapper>
       </Styled.Container>

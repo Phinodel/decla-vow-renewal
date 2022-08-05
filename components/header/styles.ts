@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { breakpoints, containerStyle } from '../../styles/theme';
+import { colors, breakpoints, containerStyle } from '../../styles/theme';
 
 const Container = styled.div`
   position: relative;
   width: 100%;
   margin: 0 auto 50px;
   z-index: 100;
+  color: ${colors.tertiary};
 `;
 
 const Wrapper = styled.div`
@@ -21,6 +22,20 @@ const Wrapper = styled.div`
   ul {
     li {
       display: inline-block;
+      margin-left: 8px;
+      opacity: 50%;
+
+      a {
+        text-decoration: none;
+      }
+
+      &.link:hover {
+        opacity: 80%;
+      }
+
+      &.active {
+        opacity: 100%;
+      }
     }
   }
 `;

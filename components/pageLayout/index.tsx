@@ -19,9 +19,6 @@ const Layout: FC<Props> = ({ children }) => {
         <title>{t('title')}</title>
         <meta name="description" content={t('description')} />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ephesis"></link>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Murecho"></link>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"></link>
       </Head>
       <Header />
       <Styled.Container>{children}</Styled.Container>
