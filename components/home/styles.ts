@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { font, colors, breakpoints, containerStyle } from '../../styles/theme';
 
 const Header = styled.div`
@@ -28,6 +28,7 @@ const Header = styled.div`
     text-align: center;
 
     @media (max-width: ${breakpoints.mobile}px) {
+      max-width: 240px;
       height: 250px;
     }
   }
@@ -46,11 +47,11 @@ const HeaderTitle = styled.h1`
   width: 302px;
   margin-top: 75px;
 
-  font-size: 80px;
   line-height: 0.6;
   color: ${colors.tertiary};
 
   @media (max-width: ${breakpoints.mobile}px) {
+    width: 265px;
     margin-top: 110px;
   }
 
@@ -61,6 +62,10 @@ const HeaderTitle = styled.h1`
     &:first-child {
       font-size: 125px;
       text-align: left;
+
+      @media (max-width: ${breakpoints.mobile}px) {
+        font-size: 110px;
+      }
     }
 
     &:not(:first-child) {
@@ -73,24 +78,84 @@ const HeaderDate = styled.h2`
   margin-top: 40px;
 
   font-family: ${font.family.tertiary};
-  font-size: 32px;
 
   @media (max-width: ${breakpoints.mobile}px) {
     margin-top: 70px;
-    font-size: 28px;
+  }
+`;
+
+const titleStyle = css`
+  .wrapper {
+    position: relative;
+  }
+
+  .title {
+    position: relative;
+    z-index: 101;
+  }
+
+  .bg {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: -15px;
+    z-index: 0;
+
+    width: 85%;
+    height: 20px;
+    background-color: ${colors.lightGreen};
   }
 `;
 
 const WhoSection = styled.div`
+  position: relative;
+  z-index: 101;
   ${containerStyle}
+  margin-top: 100px;
+
+  h3 {
+    ${titleStyle}
+  }
+`;
+
+const GreenBackground = styled.div`
+  position: relative;
+
+  div {
+    position: absolute;
+    top: -450px;
+    left: -300px;
+    z-index: 0;
+  }
 `;
 
 const WhatSection = styled.div`
+  position: relative;
+  z-index: 101;
   ${containerStyle}
+
+  margin-top: 100px;
+  text-align: right;
+
+  h3 {
+    ${titleStyle}
+  }
+
+  > div {
+    max-width: 440px;
+    margin-left: auto;
+  }
 `;
 
 const WhereSection = styled.div`
+  position: relative;
+  z-index: 101;
   ${containerStyle}
+  margin-top: 100px;
+
+  h3 {
+    ${titleStyle}
+  }
 `;
 
 export default {
@@ -99,6 +164,7 @@ export default {
   HeaderTitle,
   HeaderDate,
   WhoSection,
+  GreenBackground,
   WhatSection,
   WhereSection,
 };

@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'next-i18next';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import Styled from './styles';
 
@@ -30,20 +29,43 @@ const HomeModule: FC = () => {
       </Styled.Header>
 
       <Styled.WhoSection>
-        <h3>{t('who-title')}</h3>
+        <h3>
+          <span className="wrapper">
+            <span className="title">{t('who-title')}</span>
+            <span className="bg" />
+          </span>
+        </h3>
         <p>{t('who-text1')}</p>
         <p>{t('who-text2')}</p>
         <p>{t('who-text3')}</p>
       </Styled.WhoSection>
 
+      <Styled.GreenBackground>
+        <div>
+          <Image className="circle" src="/images/greenLeafsBg.svg" width={1250} height={1100} />
+        </div>
+      </Styled.GreenBackground>
+
       <Styled.WhatSection>
-        <h3>{t('what-title')}</h3>
-        <p>{t('what-text1')}</p>
-        <p>{t('what-text2')}</p>
+        <div>
+          <h3>
+            <span className="wrapper">
+              <span className="title">{t('what-title')}</span>
+              <span className="bg" />
+            </span>
+          </h3>
+          <p>{t('what-text1')}</p>
+          <p>{t('what-text2')}</p>
+        </div>
       </Styled.WhatSection>
 
       <Styled.WhereSection>
-        <h3>{t('where-title')}</h3>
+        <h3>
+          <span className="wrapper">
+            <span className="title">{t('where-title')}</span>
+            <span className="bg" />
+          </span>
+        </h3>
         <p>{t('where-location-name')}</p>
         <p>{t('where-location-address')}</p>
       </Styled.WhereSection>

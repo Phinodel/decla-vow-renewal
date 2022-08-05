@@ -37,17 +37,17 @@ export const font = {
   },
   sizes: {
     titles: {
-      h1: '24px',
-      h2: '22px',
-      h3: '20px',
+      h1: '80px',
+      h2: '32px',
+      h3: '72px',
       h4: '18px',
       h5: '16px',
       h6: '16px',
     },
     titlesMobile: {
-      h1: '21px',
-      h2: '20px',
-      h3: '18px',
+      h1: '70px',
+      h2: '28px',
+      h3: '65px',
       h4: '16px',
       h5: '16px',
       h6: '16px',
@@ -78,8 +78,8 @@ const theme: DefaultTheme = {
 
 export const containerStyle = css`
   width: 100%;
+  max-width: ${breakpoints.desktop}px;
   margin: 0 auto;
-  max-width: ${breakpoints.large}px;
   padding: 0 25px;
 `;
 

@@ -103,7 +103,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${font.sizes.titlesMobile.h1};
     color: ${colors.secondary};
 
-    @media (min-width: ${breakpoints.tablet}px) {
+    @media (min-width: ${breakpoints.mobile}px) {
       font-size: ${font.sizes.titles.h1};
     }
   }
@@ -113,7 +113,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${font.sizes.titlesMobile.h2};
     color: ${colors.primary};
 
-    @media (min-width: ${breakpoints.tablet}px) {
+    @media (min-width: ${breakpoints.mobile}px) {
       font-size: ${font.sizes.titles.h2};
     }
   }
