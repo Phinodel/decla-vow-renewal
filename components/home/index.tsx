@@ -92,10 +92,6 @@ const HomeModule: FC = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </Styled.Map>
-
-          <Styled.MapDecoration>
-            <Image className="circle" src="/images/squareBg.svg" width={1250} height={530} />
-          </Styled.MapDecoration>
         </Styled.MapWrapper>
       </Styled.WhereSection>
     </>

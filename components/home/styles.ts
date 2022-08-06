@@ -212,36 +212,11 @@ const MapWrapper = styled.div`
 `;
 
 const Map = styled.div`
-  margin-top: 50px;
-  padding: 20px 30px;
-
-  @media (max-width: ${breakpoints.mobile}px) {
-    padding: 10px;
-  }
+  margin-top: 30px;
 
   iframe {
-    border-radius: 30px 75px 55px 100px;
     border: none;
     background-color: #d8d8d8;
-
-    @media (max-width: ${breakpoints.mobile}px) {
-      border-radius: 30px;
-    }
-  }
-`;
-
-const MapDecoration = styled.div`
-  pointer-events: none;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  width: 100%;
-
-  @media (max-width: 940px) {
-    display: none;
   }
 `;
 
@@ -259,5 +234,4 @@ export default {
   WhereSection,
   MapWrapper,
   Map,
-  MapDecoration,
 };
