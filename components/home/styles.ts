@@ -118,13 +118,28 @@ const WhoSection = styled.div`
   }
 `;
 
+const slantedText = styled.p`
+  margin-top: 20px;
+  font-style: italic;
+  font-size: ${font.sizes.body.medium};
+`;
+
+const highlightedText = styled.span`
+  display: inline-block;
+  margin: 4px 0px;
+  padding: 0px 4px;
+
+  color: ${colors.secondary};
+  background-color: #fef3e2;
+`;
+
 const GreenBackground = styled.div`
   position: relative;
 
   div {
     position: absolute;
-    top: -450px;
-    left: -300px;
+    top: -500px;
+    left: -250px;
     z-index: 0;
   }
 `;
@@ -152,10 +167,37 @@ const WhereSection = styled.div`
   z-index: 101;
   ${containerStyle}
   margin-top: 100px;
+  margin-bottom: 100px;
 
   h3 {
     ${titleStyle}
   }
+`;
+
+const MapWrapper = styled.div`
+  position: relative;
+`;
+
+const Map = styled.div`
+  margin-top: 50px;
+  padding: 20px;
+
+  iframe {
+    border-radius: 40px;
+    border: none;
+    background-color: #d8d8d8;
+  }
+`;
+
+const MapDecoration = styled.div`
+  pointer-events: none;
+
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+
+  width: 100%;
 `;
 
 export default {
@@ -164,7 +206,12 @@ export default {
   HeaderTitle,
   HeaderDate,
   WhoSection,
+  slantedText,
+  highlightedText,
   GreenBackground,
   WhatSection,
   WhereSection,
+  MapWrapper,
+  Map,
+  MapDecoration,
 };

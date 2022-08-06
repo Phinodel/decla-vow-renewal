@@ -36,13 +36,15 @@ const HomeModule: FC = () => {
           </span>
         </h3>
         <p>{t('who-text1')}</p>
-        <p>{t('who-text2')}</p>
-        <p>{t('who-text3')}</p>
+        <p>
+          <Styled.highlightedText>{t('who-text2')}</Styled.highlightedText>
+        </p>
+        <Styled.slantedText>{t('who-text3')}</Styled.slantedText>
       </Styled.WhoSection>
 
       <Styled.GreenBackground>
         <div>
-          <Image className="circle" src="/images/greenLeafsBg.svg" width={1250} height={1100} />
+          <Image className="circle" src="/images/greenLeafsBg.svg" width={1100} height={1000} />
         </div>
       </Styled.GreenBackground>
 
@@ -55,7 +57,7 @@ const HomeModule: FC = () => {
             </span>
           </h3>
           <p>{t('what-text1')}</p>
-          <p>{t('what-text2')}</p>
+          <Styled.slantedText>{t('what-text2')}</Styled.slantedText>
         </div>
       </Styled.WhatSection>
 
@@ -67,7 +69,28 @@ const HomeModule: FC = () => {
           </span>
         </h3>
         <p>{t('where-location-name')}</p>
-        <p>{t('where-location-address')}</p>
+        <p>
+          <a target="_blank" href="https://goo.gl/maps/bpwqZ1Amz7JVnV388" referrerPolicy="no-referrer">
+            {t('where-location-address')}
+          </a>
+        </p>
+
+        <Styled.MapWrapper>
+          <Styled.Map>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.344753881954!2d3.6947748153421256!3d50.83430096232244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c30ed0abc650b5%3A0xd8a237cdd101a7c0!2s&#39;t%20Verstand%20van%20Leven!5e0!3m2!1sen!2sfr!4v1659794874830!5m2!1sen!2sfr"
+              width="100%"
+              height="350"
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </Styled.Map>
+
+          <Styled.MapDecoration>
+            <Image className="circle" src="/images/squareBg.svg" width={1250} height={530} />
+          </Styled.MapDecoration>
+        </Styled.MapWrapper>
       </Styled.WhereSection>
     </>
   );
