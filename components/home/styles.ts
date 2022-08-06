@@ -113,6 +113,10 @@ const WhoSection = styled.div`
   ${containerStyle}
   margin-top: 100px;
 
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-top: 80px;
+  }
+
   h3 {
     ${titleStyle}
   }
@@ -138,9 +142,13 @@ const GreenBackground = styled.div`
 
   div {
     position: absolute;
-    top: -500px;
-    left: -250px;
+    top: -550px;
+    left: -225px;
     z-index: 0;
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      top: -250px;
+    }
   }
 `;
 
@@ -149,8 +157,12 @@ const WhatSection = styled.div`
   z-index: 101;
   ${containerStyle}
 
-  margin-top: 100px;
+  margin-top: 80px;
   text-align: right;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-top: 60px;
+  }
 
   h3 {
     ${titleStyle}
@@ -162,12 +174,33 @@ const WhatSection = styled.div`
   }
 `;
 
+const GreenLinesBackground = styled.div`
+  position: relative;
+
+  div {
+    position: absolute;
+    bottom: -450px;
+    right: -15px;
+    z-index: 0;
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      bottom: -450px;
+      right: -200px;
+    }
+  }
+`;
+
 const WhereSection = styled.div`
   position: relative;
   z-index: 101;
   ${containerStyle}
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 
   h3 {
     ${titleStyle}
@@ -180,12 +213,20 @@ const MapWrapper = styled.div`
 
 const Map = styled.div`
   margin-top: 50px;
-  padding: 20px;
+  padding: 20px 30px;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    padding: 10px;
+  }
 
   iframe {
-    border-radius: 40px;
+    border-radius: 30px 75px 55px 100px;
     border: none;
     background-color: #d8d8d8;
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      border-radius: 30px;
+    }
   }
 `;
 
@@ -193,11 +234,15 @@ const MapDecoration = styled.div`
   pointer-events: none;
 
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   right: 0;
 
   width: 100%;
+
+  @media (max-width: 940px) {
+    display: none;
+  }
 `;
 
 export default {
@@ -210,6 +255,7 @@ export default {
   highlightedText,
   GreenBackground,
   WhatSection,
+  GreenLinesBackground,
   WhereSection,
   MapWrapper,
   Map,

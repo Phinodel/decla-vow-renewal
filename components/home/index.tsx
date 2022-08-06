@@ -44,7 +44,7 @@ const HomeModule: FC = () => {
 
       <Styled.GreenBackground>
         <div>
-          <Image className="circle" src="/images/greenLeafsBg.svg" width={1100} height={1000} />
+          <Image className="circle" src="/images/greenLeafsBg.svg" width={1000} height={900} />
         </div>
       </Styled.GreenBackground>
 
@@ -60,6 +60,12 @@ const HomeModule: FC = () => {
           <Styled.slantedText>{t('what-text2')}</Styled.slantedText>
         </div>
       </Styled.WhatSection>
+
+      <Styled.GreenLinesBackground>
+        <div>
+          <Image className="circle" src="/images/lines.svg" width={500} height={500} />
+        </div>
+      </Styled.GreenLinesBackground>
 
       <Styled.WhereSection>
         <h3>

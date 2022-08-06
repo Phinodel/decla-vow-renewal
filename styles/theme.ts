@@ -81,6 +81,14 @@ export const containerStyle = css`
   max-width: ${breakpoints.desktop}px;
   margin: 0 auto;
   padding: 0 25px;
+
+  @media (max-width: ${breakpoints.tablet}px) {
+    padding: 0 50px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}px) {
+    padding: 0 25px;
+  }
 `;
 
 export default theme;

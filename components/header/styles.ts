@@ -16,8 +16,8 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
 
   ul {
     li {
