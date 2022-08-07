@@ -4,10 +4,6 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import Styled from './styles';
 
-{
-  /* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />; */
-}
-
 const HomeModule: FC = () => {
   const { t } = useTranslation('saveTheDate');
 

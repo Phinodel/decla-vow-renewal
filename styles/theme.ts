@@ -40,17 +40,17 @@ export const font = {
       h1: '80px',
       h2: '32px',
       h3: '72px',
-      h4: '18px',
-      h5: '16px',
-      h6: '16px',
+      h4: '38px',
+      h5: '34px',
+      h6: '34px',
     },
     titlesMobile: {
       h1: '70px',
       h2: '28px',
       h3: '65px',
-      h4: '16px',
-      h5: '16px',
-      h6: '16px',
+      h4: '36px',
+      h5: '32px',
+      h6: '32px',
     },
     body: {
       extraLarge: '24px',
@@ -88,6 +88,29 @@ export const containerStyle = css`
 
   @media (max-width: ${breakpoints.tablet}px) {
     padding: 0 25px;
+  }
+`;
+
+export const titleStyle = css`
+  .wrapper {
+    position: relative;
+  }
+
+  .title {
+    position: relative;
+    z-index: 101;
+  }
+
+  .bg {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: -15px;
+    z-index: 0;
+
+    width: 85%;
+    height: 20px;
+    background-color: ${colors.lightGreen};
   }
 `;
 

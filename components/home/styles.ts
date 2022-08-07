@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { font, colors, breakpoints, containerStyle } from '../../styles/theme';
+import styled from 'styled-components';
+import { font, colors, breakpoints, containerStyle, titleStyle } from '../../styles/theme';
 
 const Header = styled.div`
   position: relative;
@@ -81,29 +81,6 @@ const HeaderDate = styled.h2`
 
   @media (max-width: ${breakpoints.mobile}px) {
     margin-top: 70px;
-  }
-`;
-
-const titleStyle = css`
-  .wrapper {
-    position: relative;
-  }
-
-  .title {
-    position: relative;
-    z-index: 101;
-  }
-
-  .bg {
-    display: inline-block;
-    position: absolute;
-    bottom: 20px;
-    right: -15px;
-    z-index: 0;
-
-    width: 85%;
-    height: 20px;
-    background-color: ${colors.lightGreen};
   }
 `;
 

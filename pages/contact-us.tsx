@@ -6,7 +6,7 @@ import ContactModule from '../components/contact';
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'en-GB', ['common'])),
+      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'contact'])),
     },
   };
 };
