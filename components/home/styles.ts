@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { font, colors, breakpoints, containerStyle, titleStyle } from '../../styles/theme';
+import { font, colors, breakpoints, containerStyle, titleStyle, linkStyle } from '../../styles/theme';
 
 const Header = styled.div`
   position: relative;
@@ -85,8 +85,6 @@ const HeaderDate = styled.h2`
 `;
 
 const WhoSection = styled.div`
-  position: relative;
-  z-index: 101;
   ${containerStyle}
   margin-top: 100px;
 
@@ -130,8 +128,6 @@ const GreenBackground = styled.div`
 `;
 
 const WhatSection = styled.div`
-  position: relative;
-  z-index: 101;
   ${containerStyle}
 
   margin-top: 80px;
@@ -168,8 +164,6 @@ const GreenLinesBackground = styled.div`
 `;
 
 const WhereSection = styled.div`
-  position: relative;
-  z-index: 101;
   ${containerStyle}
   margin-top: 80px;
   margin-bottom: 80px;
@@ -181,6 +175,10 @@ const WhereSection = styled.div`
 
   h3 {
     ${titleStyle}
+  }
+
+  a {
+    ${linkStyle}
   }
 `;
 

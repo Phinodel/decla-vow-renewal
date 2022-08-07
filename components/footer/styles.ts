@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, containerStyle } from '../../styles/theme';
+import { colors, containerStyle, linkStyle } from '../../styles/theme';
 
 const Container = styled.footer`
   width: 100%;
@@ -16,6 +16,10 @@ const Wrapper = styled.div`
 
   padding-top: 25px !important;
   padding-bottom: 25px !important;
+
+  a {
+    ${linkStyle}
+  }
 `;
 
 export default {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, breakpoints, containerStyle } from '../../styles/theme';
+import { colors, font, breakpoints, containerStyle, linkStyle } from '../../styles/theme';
 
 const Container = styled.div`
   position: relative;
@@ -14,13 +14,15 @@ const Wrapper = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   padding-top: 25px !important;
   padding-bottom: 25px !important;
 
   ul {
     li {
+      transition: all 0.5s ease;
+
       display: inline-block;
       margin-left: 8px;
       opacity: 50%;
@@ -36,6 +38,21 @@ const Wrapper = styled.div`
       &.active {
         opacity: 100%;
       }
+    }
+  }
+`;
+
+const BackContainer = styled.div`
+  p {
+    ${linkStyle}
+
+    font-size: ${font.sizes.body.medium};
+    color: ${colors.primary};
+    border-bottom-color: ${colors.primary};
+
+    &:hover {
+      color: ${colors.secondary};
+      border-bottom-color: ${colors.secondary};
     }
   }
 `;
@@ -81,6 +98,7 @@ const BackgroundLeafs = styled.div`
 export default {
   Container,
   Wrapper,
+  BackContainer,
   BackgroundLeafs,
   Background,
 };

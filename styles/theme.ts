@@ -77,6 +77,9 @@ const theme: DefaultTheme = {
 };
 
 export const containerStyle = css`
+  position: relative;
+  z-index: 101;
+
   width: 100%;
   max-width: ${breakpoints.desktop}px;
   margin: 0 auto;
@@ -111,6 +114,34 @@ export const titleStyle = css`
     width: 85%;
     height: 20px;
     background-color: ${colors.lightGreen};
+  }
+`;
+
+export const linkStyle = css`
+  transition: all 0.5s ease;
+
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.1;
+  border-bottom: 1px solid ${colors.tertiary};
+
+  &:hover {
+    color: ${colors.mediumGreen};
+    border-bottom-color: ${colors.mediumGreen};
+  }
+`;
+
+export const buttonStyle = css`
+  transition: all 0.5 ease;
+
+  cursor: pointer;
+  padding: 10px 25px;
+  background-color: ${colors.secondary};
+  color: ${colors.white};
+  border-radius: 25px;
+
+  &:hover {
+    background-color: ${colors.primary};
   }
 `;
 

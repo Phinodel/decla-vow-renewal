@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
 import Styled from './styles';
@@ -9,11 +8,6 @@ const ContactModule: FC = () => {
 
   return (
     <>
-      <Styled.BackContainer>
-        <Link href="/" passHref>
-          <a>{t('back-action')}</a>
-        </Link>
-      </Styled.BackContainer>
       <Styled.ContentContainer>
         <h3>
           <span className="wrapper">

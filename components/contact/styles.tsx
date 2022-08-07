@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 import { containerStyle, titleStyle } from '../../styles/theme';
 
-const BackContainer = styled.div``;
-
 const ContentContainer = styled.div`
-  position: relative;
-  z-index: 101;
   ${containerStyle}
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 
   h3 {
     ${titleStyle}
@@ -30,7 +26,6 @@ const BoldTitle = styled.div`
 `;
 
 export default {
-  BackContainer,
   ContentContainer,
   ContactDetailsWrapper,
   ContactDetails,
