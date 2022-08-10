@@ -12,7 +12,7 @@ const flashyGreen = '#7FD8AF';
 const textColors = {
   dark: tertiaryColor,
   light: lightGreen,
-  highLight: primaryColor,
+  highLight: 'rgba(201, 223, 211, 0.4)',
 };
 
 export const colors = {
