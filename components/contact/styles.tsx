@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { breakpoints, containerStyle, titleStyle } from '../../styles/theme';
 
+const ContentWrapper = styled.div`
+  min-height: calc(100vh - 251px);
+`;
+
 const ContentContainer = styled.div`
   ${containerStyle}
   margin-bottom: 80px;
@@ -28,6 +32,7 @@ const BoldTitle = styled.p`
 `;
 
 export default {
+  ContentWrapper,
   ContentContainer,
   ContactDetailsWrapper,
   ContactDetails,
