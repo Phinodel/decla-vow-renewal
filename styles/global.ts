@@ -35,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1;
     overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
   }
 
   ol, ul {

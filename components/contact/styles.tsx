@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { containerStyle, titleStyle } from '../../styles/theme';
+import { breakpoints, containerStyle, titleStyle } from '../../styles/theme';
 
 const ContentContainer = styled.div`
   ${containerStyle}
@@ -11,8 +11,10 @@ const ContentContainer = styled.div`
 `;
 
 const ContactDetailsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  @media (min-width: ${breakpoints.tablet}px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 const ContactDetails = styled.div`
@@ -20,9 +22,9 @@ const ContactDetails = styled.div`
   }
 `;
 
-const BoldTitle = styled.div`
-  font-weight: 600;
-  margin: 20px 0 15px;
+const BoldTitle = styled.p`
+  font-weight: 900;
+  margin: 20px 0 5px;
 `;
 
 export default {

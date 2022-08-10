@@ -18,17 +18,13 @@ const ContactModule: FC = () => {
 
         <Styled.ContactDetailsWrapper>
           <Styled.ContactDetails>
-            <Styled.BoldTitle>Pierre De Conto:</Styled.BoldTitle>
-            <ul>
-              <li>{t('mail')}: pierre.deconto@gmail.com</li>
-            </ul>
+            <Styled.BoldTitle>Delphine Claerhout:</Styled.BoldTitle>
+            <p>{t('mail')}: claerhout.delphine@gmail.com</p>
           </Styled.ContactDetails>
 
           <Styled.ContactDetails>
-            <Styled.BoldTitle>Delphine Claerhout:</Styled.BoldTitle>
-            <ul>
-              <li>{t('mail')}: claerhout.delphine@gmail.com</li>
-            </ul>
+            <Styled.BoldTitle>Pierre De Conto:</Styled.BoldTitle>
+            <p>{t('mail')}: pierre.deconto@gmail.com</p>
           </Styled.ContactDetails>
         </Styled.ContactDetailsWrapper>
       </Styled.ContentContainer>
