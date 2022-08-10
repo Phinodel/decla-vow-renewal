@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 `;
 
 const BackContainer = styled.div`
-  p {
+  a {
     ${linkStyle}
 
     font-size: ${font.sizes.body.medium};
