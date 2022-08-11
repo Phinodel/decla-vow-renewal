@@ -118,23 +118,27 @@ export const titleStyle = css`
 `;
 
 export const linkStyle = css`
-  transition: all 0.4s ease;
-  display: inline-block;
-  margin-bottom: 0px;
-  padding-bottom: 4px;
+  text-decoration: underline;
 
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 0.9;
+  @media (min-width: ${breakpoints.tablet}px) {
+    transition: all 0.4s ease;
+    display: inline-block;
+    margin-bottom: 0px;
+    padding-bottom: 4px;
 
-  border-bottom: 1px solid ${colors.tertiary};
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 0.9;
 
-  &:hover {
-    margin-bottom: 4px;
-    padding-bottom: 0px;
+    border-bottom: 1px solid ${colors.tertiary};
 
-    color: ${colors.mediumGreen};
-    border-bottom-color: ${colors.mediumGreen};
+    &:hover {
+      margin-bottom: 4px;
+      padding-bottom: 0px;
+
+      color: ${colors.mediumGreen};
+      border-bottom-color: ${colors.mediumGreen};
+    }
   }
 `;
 

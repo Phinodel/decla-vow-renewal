@@ -9,7 +9,7 @@ const Footer: FC = () => {
   return (
     <Styled.Container>
       <Styled.Wrapper>
-        <p>{t('title')}</p>
+        <p>{t('title-without-names')} Delphine&nbsp;&amp;&nbsp;Pierre</p>
         <Link href="/contact-us" passHref>
           <a>{t('contact')}</a>
         </Link>
