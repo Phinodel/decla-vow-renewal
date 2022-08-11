@@ -118,14 +118,21 @@ export const titleStyle = css`
 `;
 
 export const linkStyle = css`
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
+  display: inline-block;
+  margin-bottom: 0px;
+  padding-bottom: 4px;
 
   cursor: pointer;
   text-decoration: none;
-  line-height: 1.1;
+  line-height: 0.9;
+
   border-bottom: 1px solid ${colors.tertiary};
 
   &:hover {
+    margin-bottom: 4px;
+    padding-bottom: 0px;
+
     color: ${colors.mediumGreen};
     border-bottom-color: ${colors.mediumGreen};
   }
