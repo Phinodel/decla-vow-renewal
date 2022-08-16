@@ -13,14 +13,14 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   const { t } = useTranslation('common');
   const websiteUrl = 'https://decla-vow-renewal.vercel.app/';
-  const websiteImage = `${websiteUrl}favicon.ico`;
+  const websiteImage = `${websiteUrl}favicon2.ico`;
 
   return (
     <div>
       <Head>
         <title>{t('title')}</title>
         <meta name="description" content={t('description')} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon2.ico" />
 
         <meta property="og:url" content={websiteUrl} />
         <meta property="og:title" content={t('title')} />
