@@ -48,11 +48,14 @@ const BackContainer = styled.div`
 
     font-size: ${font.sizes.body.medium};
     color: ${colors.primary};
-    border-bottom-color: ${colors.primary};
 
-    &:hover {
-      color: ${colors.secondary};
-      border-bottom-color: ${colors.secondary};
+    @media (min-width: ${breakpoints.tablet}px) {
+      border-bottom-color: ${colors.primary};
+
+      &:hover {
+        color: ${colors.secondary};
+        border-bottom-color: ${colors.secondary};
+      }
     }
   }
 `;

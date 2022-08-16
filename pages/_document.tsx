@@ -31,12 +31,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            name="robots"
-            content="noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-          />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ephesis&display=swap"></link>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Murecho&display=swap"></link>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap"></link>

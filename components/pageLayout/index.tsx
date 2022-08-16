@@ -18,9 +18,18 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Head>
+        <meta charSet="UTF-8" />
+
         <title>{t('title')}</title>
         <meta name="description" content={t('description')} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link rel="icon" href="/favicon2.ico" />
+
+        <meta
+          name="robots"
+          content="noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
 
         <meta property="og:url" content={websiteUrl} />
         <meta property="og:title" content={t('title')} />
