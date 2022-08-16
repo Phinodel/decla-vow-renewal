@@ -12,7 +12,7 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   const { t } = useTranslation('common');
-  const websiteUrl = 'https://decla-vow-renewal.vercel.app/';
+  const websiteUrl = 'https://delphine-pierre-vow-renewal.vercel.app/';
   const websiteImage = `${websiteUrl}favicon2.ico`;
 
   return (
