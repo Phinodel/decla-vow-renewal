@@ -37,9 +37,9 @@ export default class MyDocument extends Document {
             name="robots"
             content="noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
           />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ephesis"></link>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Murecho"></link>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"></link>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ephesis&display=swap"></link>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Murecho&display=swap"></link>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap"></link>
         </Head>
         <body>
           <Main />
