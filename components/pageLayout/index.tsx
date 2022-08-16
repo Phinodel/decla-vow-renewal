@@ -12,6 +12,8 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   const { t } = useTranslation('common');
+  const websiteUrl = 'https://decla-vow-renewal.vercel.app/';
+  const websiteImage = `${websiteUrl}favicon.ico`;
 
   return (
     <div>
@@ -20,17 +22,21 @@ const Layout: FC<Props> = ({ children }) => {
         <meta name="description" content={t('description')} />
         <link rel="icon" href="/favicon.ico" />
 
-        <meta property="og:url" content="https://decla-vow-renewal.vercel.app/" />
+        <meta property="og:url" content={websiteUrl} />
         <meta property="og:title" content={t('title')} />
         <meta property="og:description" content={t('description')} />
 
-        <meta property="og:image" content="https://decla-vow-renewal.vercel.app/favicon.ico" />
-        <meta property="twitter:image" content="https://decla-vow-renewal.vercel.app/favicon.ico" />
+        <meta property="og:image" itemProp="image" content={websiteImage} />
+        <meta property="twitter:image" content={websiteImage} />
+        <meta name="msapplication-TileImage" content={websiteImage} />
+
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="180" />
         <meta property="og:image:height" content="180" />
 
+        <meta property="og:site_name" content={t('title')} />
         <meta property="og:type" content="website" />
+        <meta property="og:updated_time" content={`${Date.now()}`} />
 
         <meta name="author" content="Delphine Claerhout" />
       </Head>
