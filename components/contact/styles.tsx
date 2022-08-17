@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { breakpoints, containerStyle, titleStyle } from '../../styles/theme';
 
 const ContentWrapper = styled.div`
-  min-height: calc(100vh - 251px);
+  min-height: calc(100vh - 252px);
 `;
 
 const ContentContainer = styled.div`

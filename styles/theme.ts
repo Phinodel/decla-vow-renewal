@@ -85,11 +85,11 @@ export const containerStyle = css`
   margin: 0 auto;
   padding: 0 25px;
 
-  @media (max-width: ${breakpoints.tablet}px) {
+  @media (max-width: ${breakpoints.desktop}px) {
     padding: 0 50px;
   }
 
-  @media (max-width: ${breakpoints.tablet}px) {
+  @media (max-width: ${breakpoints.mobile}px) {
     padding: 0 25px;
   }
 `;
