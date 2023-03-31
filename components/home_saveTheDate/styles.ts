@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { font, colors, breakpoints } from '../../styles/theme';
+import { font, colors, breakpoints, containerStyle, titleStyle, linkStyle } from '../../styles/theme';
 
 const Header = styled.div`
   position: relative;
@@ -47,7 +47,7 @@ const HeaderTitle = styled.h1`
   width: 302px;
   margin-top: 75px;
 
-  line-height: 1;
+  line-height: 0.6;
   color: ${colors.tertiary};
 
   @media (max-width: ${breakpoints.mobile}px) {
@@ -60,7 +60,12 @@ const HeaderTitle = styled.h1`
     width: 100%;
 
     &:first-child {
+      font-size: 125px;
       text-align: left;
+
+      @media (max-width: ${breakpoints.mobile}px) {
+        font-size: 110px;
+      }
     }
 
     &:not(:first-child) {
@@ -79,6 +84,34 @@ const HeaderDate = styled.h2`
   }
 `;
 
+const WhoSection = styled.div`
+  ${containerStyle}
+  margin-top: 100px;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-top: 80px;
+  }
+
+  h3 {
+    ${titleStyle}
+  }
+`;
+
+const slantedText = styled.p`
+  margin-top: 20px;
+  font-style: italic;
+  font-size: ${font.sizes.body.medium};
+`;
+
+const highlightedText = styled.span`
+  display: inline-block;
+  margin: 4px 0px;
+  padding: 0px 4px;
+
+  color: ${colors.secondary};
+  background-color: #fef3e2;
+`;
+
 const GreenBackground = styled.div`
   position: relative;
 
@@ -91,6 +124,26 @@ const GreenBackground = styled.div`
     @media (max-width: ${breakpoints.mobile}px) {
       top: -250px;
     }
+  }
+`;
+
+const WhatSection = styled.div`
+  ${containerStyle}
+
+  margin-top: 80px;
+  text-align: right;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-top: 60px;
+  }
+
+  h3 {
+    ${titleStyle}
+  }
+
+  > div {
+    max-width: 440px;
+    margin-left: auto;
   }
 `;
 
@@ -110,18 +163,35 @@ const GreenLinesBackground = styled.div`
   }
 `;
 
-const LeafsBackground = styled.div`
+const WhereSection = styled.div`
+  ${containerStyle}
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  h3 {
+    ${titleStyle}
+  }
+
+  a {
+    ${linkStyle}
+  }
+`;
+
+const MapWrapper = styled.div`
   position: relative;
+`;
 
-  div {
-    position: absolute;
-    left: -180px;
-    bottom: 0;
-    z-index: 0;
+const Map = styled.div`
+  margin-top: 30px;
 
-    @media (max-width: ${breakpoints.mobile}px) {
-      /* top: -250px; */
-    }
+  iframe {
+    border: none;
+    background-color: #d8d8d8;
   }
 `;
 
@@ -130,7 +200,13 @@ export default {
   HeaderWrapper,
   HeaderTitle,
   HeaderDate,
+  WhoSection,
+  slantedText,
+  highlightedText,
   GreenBackground,
+  WhatSection,
   GreenLinesBackground,
-  LeafsBackground,
+  WhereSection,
+  MapWrapper,
+  Map,
 };

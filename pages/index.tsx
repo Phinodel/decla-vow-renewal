@@ -1,3 +1,4 @@
+import React from 'react';
 import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -6,7 +7,7 @@ import HomeModule from '../components/home';
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'saveTheDate'])),
+      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'home'])),
     },
   };
 };
