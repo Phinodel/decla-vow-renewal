@@ -2,7 +2,7 @@ import React, { ChangeEvent, FC, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import Styled from './styles';
-import { getList, updateList } from '../utils';
+import { getList } from '../utils';
 
 interface ComponentProps {
   onClose: () => void;
