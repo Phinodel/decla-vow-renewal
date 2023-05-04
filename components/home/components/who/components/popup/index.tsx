@@ -59,6 +59,8 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
     const list = getList();
 
+    console.log(list);
+
     // check if name already exists in list
 
     // yes? show given info
