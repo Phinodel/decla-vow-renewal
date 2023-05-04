@@ -159,4 +159,39 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-user-drag: none;
     user-select: none;
   }
+
+  input {
+    // reset
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+
+    // new
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 5px 5px 0 0;
+    border-bottom: 1px solid ${colors.tertiary};
+
+    &::placeholder {
+      color: ${colors.tertiary};
+      opacity: 0.3;
+    }
+
+    &:-ms-input-placeholder {
+      color: ${colors.tertiary};
+      opacity: 0.3;
+    }
+
+    &::-ms-input-placeholder {
+      color: ${colors.tertiary};
+      opacity: 0.3;
+    }
+
+    &.error {
+      border-bottom-color: ${colors.error};
+    }
+  }
+
+
 `;

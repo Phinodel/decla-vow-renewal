@@ -42,6 +42,41 @@ const ContactModule: FC = () => {
             <Styled.BoldTitle>{t('invitation-question')}</Styled.BoldTitle>
             <p>{t('invitation-answer')}</p>
           </div>
+
+          <div>
+            <Styled.BoldTitle>{t('arrivalTime-question')}</Styled.BoldTitle>
+            <p>{t('arrivalTime-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('endTime-question')}</Styled.BoldTitle>
+            <p>{t('endTime-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('parking-question')}</Styled.BoldTitle>
+            <p>{t('parking-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('kids-question')}</Styled.BoldTitle>
+            <p>{t('kids-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('date-question')}</Styled.BoldTitle>
+            <p>{t('date-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('photos-question')}</Styled.BoldTitle>
+            <p>{t('photos-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('clothing-question')}</Styled.BoldTitle>
+            <p>{t('clothing-answer')}</p>
+          </div>
         </Styled.ContentContainer>
       </Styled.ContentWrapper>
     </>

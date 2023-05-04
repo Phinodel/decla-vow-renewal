@@ -1,0 +1,10 @@
+{
+  "title": "Confirm your presence",
+  "content1": "RSVP here",
+  "content2": "The menu will include vegetarian and meat options.",
+  "content3": "If you have other dietary requirements (veganism, health or religion) feel free to let us know below.",
+  "specialDietryRequirements": "Special dietry requirements",
+  "songRequests": "If you have any song requests for the party, let us know below:",
+  "declineButton": "Regretfully decline",
+  "acceptButton": "Joyfully accept"
+}

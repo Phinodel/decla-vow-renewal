@@ -7,7 +7,7 @@ import HomeModule from '../components/home';
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'home'])),
+      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'home', 'popup'])),
     },
   };
 };
