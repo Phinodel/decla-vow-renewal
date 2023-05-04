@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, buttonStyle, colors, linkStyle, font } from '../../../../../../styles/theme';
+import { breakpoints, buttonStyle, colors, linkStyle } from '../../../../../../styles/theme';
 
 const Wrapper = styled.div`
   position: absolute;
