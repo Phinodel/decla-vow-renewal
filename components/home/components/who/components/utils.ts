@@ -1,6 +1,7 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { Guest } from './types';
 
-export const getList = async () => {
+const connectToSpreadsheet = async (): Promise<GoogleSpreadsheet | undefined> => {
   try {
     const doc = new GoogleSpreadsheet(process.env.NEXT_PUBLIC_SPREADSHEET_ID || '');
 
@@ -15,13 +16,67 @@ export const getList = async () => {
 
     await doc.loadInfo();
 
-    const sheet = doc.sheetsByIndex[0];
-    console.log(sheet.title);
+    return doc;
   } catch (err) {
-    console.log(err);
+    return undefined;
   }
 };
 
-export const updateList = async (data: any) => {
-  console.log({ data });
+const rowNames = {
+  name: 'Name',
+  isComing: 'RSVP',
+  food: 'Dietary requirements',
+  music: 'Music requests',
+};
+
+export const updateList = async (
+  guests: Guest[],
+  extraInfo: { accepts: boolean; food: string; music: string },
+): Promise<{ updateListError: Error | null; guestAlreadyExists: boolean }> => {
+  try {
+    const doc = await connectToSpreadsheet();
+
+    if (!doc) {
+      throw new Error('could not find document');
+    }
+
+    const sheet = doc.sheetsByIndex[0];
+    const rows = await sheet.getRows();
+
+    const allGuestNames = rows.map((e) => e[rowNames.name]);
+
+    const [registered, unregistered] = guests.reduce(
+      (result, guest) => {
+        const isRegistered = allGuestNames.includes(guest.name);
+        result[isRegistered ? 0 : 1].push(guest);
+
+        return result;
+      },
+      [[] as Guest[], [] as Guest[]],
+    );
+
+    registered.map(async (guest) => {
+      const index = allGuestNames.indexOf(guest.name);
+
+      rows[index][rowNames.isComing] = extraInfo.accepts;
+      rows[index][rowNames.food] = extraInfo.food;
+      rows[index][rowNames.music] = extraInfo.music;
+
+      await rows[index].save();
+    });
+
+    const newData = unregistered.map((guest) => ({
+      [rowNames.name]: guest.name,
+      [rowNames.isComing]: extraInfo.accepts,
+      [rowNames.food]: extraInfo.food,
+      [rowNames.music]: extraInfo.music,
+    }));
+
+    await sheet.addRows(newData);
+
+    return { updateListError: null, guestAlreadyExists: registered.length > 0 };
+  } catch (err) {
+    console.error(err);
+    return { updateListError: new Error('something went wrong'), guestAlreadyExists: false };
+  }
 };

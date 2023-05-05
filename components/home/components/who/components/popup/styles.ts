@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import { breakpoints, buttonStyle, colors, linkStyle } from '../../../../../../styles/theme';
 
+const FilterWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+`;
+
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
@@ -14,8 +25,6 @@ const Wrapper = styled.div`
 const Background = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${colors.black};
-  opacity: 0.05;
 `;
 
 const Container = styled.div`
@@ -121,6 +130,7 @@ const Declinebutton = styled.div`
 `;
 
 export default {
+  FilterWrapper,
   Wrapper,
   Background,
   Container,
