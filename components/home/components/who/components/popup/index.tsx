@@ -14,7 +14,7 @@ const maxGuests = 8;
 
 const Popup: FC<ComponentProps> = ({ onClose }) => {
   const [guests, setGuests] = useState<Guest[]>([emptyGuest]);
-  const [extraData, setExtraData] = useState<ExtraGuestInfo>({ music: '', food: '' });
+  const [extraData, setExtraData] = useState<ExtraGuestInfo>({ food: '' });
 
   const [guestAlreadyRSVPd, setGuestAlreadyRSVPd] = useState<boolean>(false);
   const [error, setError] = useState(null);
@@ -25,7 +25,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
   const reset = () => {
     setGuests([emptyGuest]);
-    setExtraData({ music: '', food: '' });
+    setExtraData({ food: '' });
     setGuestAlreadyRSVPd(false);
     setError(null);
     setSuccess(false);
@@ -65,6 +65,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
       const canSubmit = checkIfFieldsAreFilled();
 
       if (!canSubmit) {
+        setLoading(false);
         return false;
       }
 
@@ -81,9 +82,10 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
       setLoading(false);
       setSuccess(true);
 
-      setTimeout(reset, 10000);
+      setTimeout(reset, 8000);
     } catch {
       setError(t('errorMessage'));
+      setLoading(false);
     }
   };
 
@@ -100,16 +102,18 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
           <Styled.CloseButton onClick={handleOnClose} />
           <Styled.Content>
             <h4>{t('title')}</h4>
-            <p>{t('content1')}</p>
-            <p>{t('content2')}</p>
-            <p>{t('content3')}</p>
+            <Styled.TextWrapper>
+              <p>{t('content1')}</p>
+              <p>{t('content2')}</p>
+              <p>{t('content3')}</p>
+            </Styled.TextWrapper>
 
-            <div>
+            <Styled.InputWrapper>
               {guests.map((e, i) => (
                 <div key={i}>
                   <input
                     type="text"
-                    placeholder="Jane Doe"
+                    placeholder={t('namePlaceholder')}
                     className={e.error ? 'error' : ''}
                     onChange={handleOnChange(i)}
                     disabled={loading}
@@ -117,14 +121,18 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
                 </div>
               ))}
 
-              {guests.length < maxGuests && <Styled.AddButton onClick={handleOnAdd}>&#43;</Styled.AddButton>}
-            </div>
+              {guests.length < maxGuests && (
+                <Styled.AddButton className={loading ? 'disabled' : ''} onClick={loading ? undefined : handleOnAdd}>
+                  &#43;
+                </Styled.AddButton>
+              )}
+            </Styled.InputWrapper>
 
-            <p>{t('specialDietryRequirements')}</p>
-            <textarea disabled={loading} onChange={handleOnChangeExtraInfo('food')} />
-
-            <p>{t('songRequests')}</p>
-            <input type="text" disabled={loading} onChange={handleOnChangeExtraInfo('music')} />
+            <textarea
+              disabled={loading}
+              placeholder={t('specialDietaryRequirements')}
+              onChange={handleOnChangeExtraInfo('food')}
+            />
 
             {error && <p>{error}</p>}
 

@@ -26,12 +26,11 @@ const rowNames = {
   name: 'Name',
   isComing: 'RSVP',
   food: 'Dietary requirements',
-  music: 'Music requests',
 };
 
 export const updateList = async (
   guests: Guest[],
-  extraInfo: { accepts: boolean; food: string; music: string },
+  extraInfo: { accepts: boolean; food: string },
 ): Promise<{ updateListError: Error | null; guestAlreadyExists: boolean }> => {
   try {
     const doc = await connectToSpreadsheet();
@@ -60,7 +59,6 @@ export const updateList = async (
 
       rows[index][rowNames.isComing] = extraInfo.accepts;
       rows[index][rowNames.food] = extraInfo.food;
-      rows[index][rowNames.music] = extraInfo.music;
 
       await rows[index].save();
     });
@@ -69,7 +67,6 @@ export const updateList = async (
       [rowNames.name]: guest.name,
       [rowNames.isComing]: extraInfo.accepts,
       [rowNames.food]: extraInfo.food,
-      [rowNames.music]: extraInfo.music,
     }));
 
     await sheet.addRows(newData);

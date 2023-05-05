@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { breakpoints, buttonStyle, colors, linkStyle } from '../../../../../../styles/theme';
 
-const FilterWrapper = styled.div`
+const wrapperStyle = css`
   position: absolute;
   top: 0;
   left: 0;
@@ -9,17 +9,15 @@ const FilterWrapper = styled.div`
   height: 100%;
   z-index: 999;
   overflow: hidden;
+`;
+
+const FilterWrapper = styled.div`
+  ${wrapperStyle}
   backdrop-filter: blur(6px);
 `;
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  overflow: hidden;
+  ${wrapperStyle}
 `;
 
 const Background = styled.div`
@@ -35,11 +33,18 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
 
   width: 90%;
-  max-width: 650px;
+  max-width: 700px;
 
   background-color: ${colors.lightGreen};
   border-radius: 25px;
   box-shadow: 9px 9px 20px rgba(0, 0, 0, 0.15);
+
+  h4::selection,
+  p::selection,
+  input::selection,
+  textarea::selection {
+    background: #e9f2ed !important;
+  }
 `;
 
 const CloseButton = styled.div`
@@ -78,10 +83,33 @@ const CloseButton = styled.div`
 
 const Content = styled.div`
   text-align: center;
-  padding: 45px 15px 15px;
 
   max-height: 80vh;
   overflow: scroll;
+
+  padding: 45px 15px 15px;
+
+  > div,
+  > p,
+  > h4 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto 15px;
+  }
+`;
+
+const TextWrapper = styled.div`
+  margin: 15px auto;
+`;
+
+const InputWrapper = styled.div`
+  margin: 30px 0 30px;
 `;
 
 const AddButton = styled.div`
@@ -102,14 +130,20 @@ const AddButton = styled.div`
   &:hover {
     opacity: 1;
   }
+
+  &.disabled {
+    cursor: default !important;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
 
-  margin: 45px auto 0;
+  margin: 30px auto 0;
 
   @media (max-width: ${breakpoints.tablet}px) {
     justify-content: center;
@@ -120,13 +154,26 @@ const ButtonWrapper = styled.div`
 
 const Button = styled.div`
   ${buttonStyle}
-  width: 300px;
+  width: 250px;
   margin: 15px 0;
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 `;
 
 const Declinebutton = styled.div`
   ${linkStyle}
   text-align: center;
+  font-size: 14px;
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 `;
 
 export default {
@@ -136,6 +183,8 @@ export default {
   Container,
   CloseButton,
   Content,
+  TextWrapper,
+  InputWrapper,
   AddButton,
   ButtonWrapper,
   Button,

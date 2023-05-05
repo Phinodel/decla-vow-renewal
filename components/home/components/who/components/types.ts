@@ -5,5 +5,4 @@ export interface Guest {
 
 export interface ExtraGuestInfo {
   food: string;
-  music: string;
 }
