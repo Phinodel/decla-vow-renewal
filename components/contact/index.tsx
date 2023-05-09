@@ -18,15 +18,15 @@ const ContactModule: FC = () => {
           </h3>
 
           <Styled.ContactDetailsWrapper>
-            <Styled.ContactDetails>
+            <div>
               <Styled.BoldTitle>Delphine Claerhout:</Styled.BoldTitle>
               <p>{t('mail')}: claerhout.delphine@gmail.com</p>
-            </Styled.ContactDetails>
+            </div>
 
-            <Styled.ContactDetails>
+            <div>
               <Styled.BoldTitle>Pierre De Conto:</Styled.BoldTitle>
               <p>{t('mail')}: pierre.deconto@gmail.com</p>
-            </Styled.ContactDetails>
+            </div>
           </Styled.ContactDetailsWrapper>
         </Styled.ContentContainer>
 

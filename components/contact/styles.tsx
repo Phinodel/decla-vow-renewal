@@ -12,6 +12,10 @@ const ContentContainer = styled.div`
   h3 {
     ${titleStyle}
   }
+
+  p {
+    max-width: 810px;
+  }
 `;
 
 const ContactDetailsWrapper = styled.div`
@@ -21,20 +25,14 @@ const ContactDetailsWrapper = styled.div`
   }
 `;
 
-const ContactDetails = styled.div`
-  ul {
-  }
-`;
-
 const BoldTitle = styled.p`
   font-weight: 900;
-  margin: 20px 0 5px;
+  margin: 50px 0 5px;
 `;
 
 export default {
   ContentWrapper,
   ContentContainer,
   ContactDetailsWrapper,
-  ContactDetails,
   BoldTitle,
 };

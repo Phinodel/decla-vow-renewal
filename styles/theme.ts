@@ -41,7 +41,7 @@ export const font = {
       h1: '80px',
       h2: '32px',
       h3: '72px',
-      h4: '38px',
+      h4: '45px',
       h5: '34px',
       h6: '34px',
     },

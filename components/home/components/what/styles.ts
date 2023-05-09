@@ -22,7 +22,7 @@ const WhatSection = styled.div`
 `;
 
 const DressCode = styled.p`
-  margin: 10px 0;
+  margin: 20px 0;
 `;
 
 const DresscodeHighlight = styled.span`
