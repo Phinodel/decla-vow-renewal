@@ -4,9 +4,13 @@ import { colors, font, breakpoints, containerStyle, linkStyle } from '../../styl
 const Container = styled.div`
   position: relative;
   width: 100%;
-  margin: 0 auto 50px;
+  margin: 0 auto;
   z-index: 100;
   color: ${colors.tertiary};
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -69,10 +73,11 @@ const Background = styled.div`
   width: 50vw;
   height: 44vw;
 
-  background-image: url('./images/simpleOrangeCircleBg.svg');
+  background-image: url('./images/simpleOrangeCircleBgAlt2.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom;
+  opacity: 50%;
 
   @media (max-width: ${breakpoints.tablet}px) {
     width: 65vw;
@@ -95,7 +100,7 @@ const BackgroundLeafs = styled.div`
   height: 100%;
 
   transform: rotate(180deg);
-  opacity: 7%;
+  opacity: 18%;
 `;
 
 export default {

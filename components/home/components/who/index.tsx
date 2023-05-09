@@ -5,7 +5,7 @@ import Popup from './components/popup';
 import Styled from './styles';
 
 const Who: FC = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const { t } = useTranslation('home');
 
   const handleOnClick = () => {

@@ -34,15 +34,14 @@ const DresscodeHighlight = styled.span`
 const ScheduleSection = styled.div`
   ${containerStyle}
 
-  margin-top: 40px;
-  padding-right: 120px;
+  margin: 50px auto 0;
 `;
 
 const ScheduleSectionBackground = styled.div`
   background-image: url('./images/orangeBg.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: center;
 
   position: relative;
 
@@ -55,11 +54,14 @@ const Clock = styled.div`
   width: 100%;
   max-width: 500px;
   height: 400px;
-  margin-left: auto;
-  border-radius: 50%;
+
   position: absolute;
+  left: 0;
   right: 0;
+  margin: 0 auto;
+
   opacity: 0.1;
+  border-radius: 50%;
 
   .pointer {
     position: absolute;
@@ -91,23 +93,20 @@ const Clock = styled.div`
 
 const ScheduleContent = styled.div`
   width: 60%;
-  max-width: 400px;
-  margin-left: auto;
+  max-width: 305px;
+  margin: 0 auto;
   padding-top: 35px;
-
-  @media (max-width: ${breakpoints.tablet}px) {
-    margin-right: 0;
-  }
-
-  @media (max-width: ${breakpoints.mobile}px) {
-    margin: auto;
-  }
+  text-align: center;
 
   h4 {
     font-size: ${font.sizes.body.extraLarge};
     font-family: ${font.family.primary};
     color: ${colors.primary};
     margin-bottom: 15px;
+  }
+
+  table {
+    width: 100%;
   }
 
   thead {

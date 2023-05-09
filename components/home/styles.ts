@@ -14,14 +14,14 @@ const Header = styled.div`
   }
 
   & > div:first-child {
-    background-image: url('./images/polygonBg.svg');
+    background-image: url('./images/polygonAlt.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 
     width: 100%;
-    max-width: 490px;
-    height: 460px;
+    max-width: 680px;
+    height: 680px;
 
     margin: 0 auto;
 
@@ -84,8 +84,8 @@ const GreenBackground = styled.div`
 
   div {
     position: absolute;
-    top: -550px;
-    left: -225px;
+    top: -600px;
+    left: -223px;
     z-index: 0;
 
     @media (max-width: ${breakpoints.mobile}px) {
@@ -99,7 +99,7 @@ const GreenLinesBackground = styled.div`
 
   div {
     position: absolute;
-    bottom: -450px;
+    bottom: -290px;
     right: -15px;
     z-index: 0;
 
@@ -116,12 +116,25 @@ const LeafsBackground = styled.div`
   div {
     position: absolute;
     left: -180px;
-    bottom: 0;
+    bottom: 100px;
     z-index: 0;
+  }
 
-    @media (max-width: ${breakpoints.mobile}px) {
-      /* top: -250px; */
-    }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+
+    width: 190px;
+    height: 305px;
+
+    right: 0%;
+    top: -240px;
+
+    background-image: url('./images/circles.svg');
+    background-size: 215px 300px;
+
+    opacity: 0.5;
   }
 `;
 
