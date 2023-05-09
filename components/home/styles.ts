@@ -85,7 +85,7 @@ const GreenBackground = styled.div`
   div {
     position: absolute;
     top: -600px;
-    left: -223px;
+    left: -202px;
     z-index: 0;
 
     @media (max-width: ${breakpoints.mobile}px) {

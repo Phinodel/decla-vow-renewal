@@ -37,7 +37,7 @@ const HomeModule: FC = () => {
 
       <Styled.GreenBackground>
         <div>
-          <Image className="circle" src="/images/greenLeafsBg.svg" width={1000} height={900} />
+          <Image className="circle" src="/images/greenLeafsBgAlt.svg" width={1000} height={900} />
         </div>
       </Styled.GreenBackground>
 
