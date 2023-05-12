@@ -14,7 +14,7 @@ const Header = styled.div`
   }
 
   & > div:first-child {
-    background-image: url('./images/polygonAlt.svg');
+    background-image: url('./images/polygon.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
