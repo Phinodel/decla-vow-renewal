@@ -49,11 +49,6 @@ const ContactModule: FC = () => {
           </div>
 
           <div>
-            <Styled.BoldTitle>{t('endTime-question')}</Styled.BoldTitle>
-            <p>{t('endTime-answer')}</p>
-          </div>
-
-          <div>
             <Styled.BoldTitle>{t('parking-question')}</Styled.BoldTitle>
             <p>{t('parking-answer')}</p>
           </div>
@@ -61,16 +56,6 @@ const ContactModule: FC = () => {
           <div>
             <Styled.BoldTitle>{t('kids-question')}</Styled.BoldTitle>
             <p>{t('kids-answer')}</p>
-          </div>
-
-          <div>
-            <Styled.BoldTitle>{t('date-question')}</Styled.BoldTitle>
-            <p>{t('date-answer')}</p>
-          </div>
-
-          <div>
-            <Styled.BoldTitle>{t('photos-question')}</Styled.BoldTitle>
-            <p>{t('photos-answer')}</p>
           </div>
 
           <div>
