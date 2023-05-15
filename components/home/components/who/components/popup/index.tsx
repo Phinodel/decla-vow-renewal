@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FC, useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { track } from '@vercel/analytics';
 
 import Styled from './styles';
 import { updateList } from '../utils';
@@ -84,6 +85,12 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
       setLoading(false);
       setSuccess(true);
+
+      track('RSVP', {
+        details: JSON.stringify({ guests, ...extraData, accepts }),
+        guestAlreadyExists,
+        accepts,
+      });
 
       setTimeout(reset, 7500);
     } catch {
