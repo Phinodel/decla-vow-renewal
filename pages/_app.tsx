@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
+
+/*eslint import/no-unresolved: */
 import { Analytics } from '@vercel/analytics/react';
 
 import { ThemeProvider } from 'styled-components';
