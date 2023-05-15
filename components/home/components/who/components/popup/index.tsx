@@ -94,6 +94,11 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
       setTimeout(reset, 7500);
     } catch {
+      track('RSVP ERROR', {
+        details: JSON.stringify({ guests, ...extraData, accepts }),
+        accepts,
+      });
+
       setShowError(true);
       setLoading(false);
     }
