@@ -152,10 +152,14 @@ const ButtonWrapper = styled.div`
   }
 `;
 
+const CloseButtonWrapper = styled.div`
+  margin: 30px auto 0;
+`;
+
 const Button = styled.div`
   ${buttonStyle}
   width: 250px;
-  margin: 15px 0;
+  margin: 15px auto;
 
   &.disabled {
     cursor: default;
@@ -176,6 +180,18 @@ const Declinebutton = styled.div`
   }
 `;
 
+const ErrorMessage = styled.p`
+  margin-top: 10px;
+  font-style: italic;
+  color: ${colors.error};
+`;
+
+const SuccessMessage = styled.p`
+  margin-top: 10px;
+  font-style: italic;
+  color: ${colors.primary};
+`;
+
 export default {
   FilterWrapper,
   Wrapper,
@@ -187,6 +203,9 @@ export default {
   InputWrapper,
   AddButton,
   ButtonWrapper,
+  CloseButtonWrapper,
   Button,
   Declinebutton,
+  ErrorMessage,
+  SuccessMessage,
 };

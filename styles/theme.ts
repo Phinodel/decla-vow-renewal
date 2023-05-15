@@ -19,7 +19,7 @@ const textColors = {
 export const colors = {
   white: '#ffffff',
   black: '#000000',
-  error: '#f52d00',
+  error: '#E54F03',
   primary: primaryColor,
   secondary: secondaryColor,
   tertiary: tertiaryColor,

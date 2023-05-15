@@ -7,5 +7,9 @@
   "specialDietaryRequirements": "Special dietry requirements",
   "declineButton": "Regretfully decline",
   "acceptButton": "Joyfully accept",
-  "errorMessage": "Something went wrong, please try again later"
+  "closeButton": "Close",
+  "errorMessage": "Something went wrong, please try again later",
+  "updateMessage": "Your response has been updated, thank you for letting us know.",
+  "savedMessageAccept": "Your response has been saved, thank you for letting us know. We're looking forward to celebrate with you!",
+  "savedMessageDecline": "Your response has been saved, thank you for lettings us know."
 }

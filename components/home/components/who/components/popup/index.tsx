@@ -17,8 +17,9 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
   const [extraData, setExtraData] = useState<ExtraGuestInfo>({ food: '' });
 
   const [guestAlreadyRSVPd, setGuestAlreadyRSVPd] = useState<boolean>(false);
-  const [error, setError] = useState(null);
+  const [showError, setShowError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [accepted, setAccepted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const { t } = useTranslation('popup');
@@ -27,7 +28,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
     setGuests([emptyGuest]);
     setExtraData({ food: '' });
     setGuestAlreadyRSVPd(false);
-    setError(null);
+    setShowError(false);
     setSuccess(false);
     onClose();
   };
@@ -59,7 +60,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
   const handleOnSubmit = (accepts: boolean) => async () => {
     try {
-      setError(null);
+      setShowError(false);
       setLoading(true);
 
       const canSubmit = checkIfFieldsAreFilled();
@@ -79,12 +80,14 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
         setGuestAlreadyRSVPd(true);
       }
 
+      setAccepted(accepts);
+
       setLoading(false);
       setSuccess(true);
 
-      setTimeout(reset, 8000);
+      setTimeout(reset, 7500);
     } catch {
-      setError(t('errorMessage'));
+      setShowError(true);
       setLoading(false);
     }
   };
@@ -92,6 +95,10 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
   const handleOnClose = () => {
     onClose();
   };
+
+  const showUpdateMessage = guestAlreadyRSVPd;
+  const showSuccessMessageAccepted = !showUpdateMessage && success && accepted;
+  const showSucessMessageDeclined = !showUpdateMessage && success && !accepted;
 
   return (
     <>
@@ -134,24 +141,34 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
               onChange={handleOnChangeExtraInfo('food')}
             />
 
-            {error && <p>{error}</p>}
+            {showError && <Styled.ErrorMessage>{t('errorMessage')}</Styled.ErrorMessage>}
 
-            {guestAlreadyRSVPd && <p>your rsvp has been updated</p>}
+            {showUpdateMessage && <Styled.SuccessMessage>{t('updateMessage')}</Styled.SuccessMessage>}
 
-            {!guestAlreadyRSVPd && success && <p>your rsvp has been saved</p>}
+            {showSuccessMessageAccepted && <Styled.SuccessMessage>{t('savedMessageAccept')}</Styled.SuccessMessage>}
 
-            <Styled.ButtonWrapper>
-              <div>
-                <Styled.Declinebutton className={loading ? 'disabled' : ''} onClick={handleOnSubmit(false)}>
-                  {t('declineButton')}
-                </Styled.Declinebutton>
-              </div>
-              <div>
-                <Styled.Button className={loading ? 'disabled' : ''} onClick={handleOnSubmit(true)}>
-                  {t('acceptButton')}
+            {showSucessMessageDeclined && <Styled.SuccessMessage>{t('savedMessageDecline')}</Styled.SuccessMessage>}
+
+            {success ? (
+              <Styled.CloseButtonWrapper>
+                <Styled.Button className={loading ? 'disabled' : ''} onClick={onClose}>
+                  {t('closeButton')}
                 </Styled.Button>
-              </div>
-            </Styled.ButtonWrapper>
+              </Styled.CloseButtonWrapper>
+            ) : (
+              <Styled.ButtonWrapper>
+                <div>
+                  <Styled.Declinebutton className={loading ? 'disabled' : ''} onClick={handleOnSubmit(false)}>
+                    {t('declineButton')}
+                  </Styled.Declinebutton>
+                </div>
+                <div>
+                  <Styled.Button className={loading ? 'disabled' : ''} onClick={handleOnSubmit(true)}>
+                    {t('acceptButton')}
+                  </Styled.Button>
+                </div>
+              </Styled.ButtonWrapper>
+            )}
           </Styled.Content>
         </Styled.Container>
       </Styled.Wrapper>
