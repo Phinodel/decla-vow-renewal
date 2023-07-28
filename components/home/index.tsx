@@ -7,7 +7,7 @@ import Styled from './styles';
 import Who from './components/who';
 import What from './components/what';
 import Where from './components/where';
-import Accomodations from './components/accomodations';
+import Accommodations from './components/accommodations';
 import Gifts from './components/gifts';
 
 const HomeModule: FC = () => {
@@ -51,7 +51,7 @@ const HomeModule: FC = () => {
         </div>
       </Styled.GreenLinesBackground>
 
-      <Accomodations />
+      <Accommodations />
 
       <Gifts />
 

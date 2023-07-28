@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { breakpoints, containerStyle, titleStyle, linkStyle } from '../../../../styles/theme';
 
-const AccomodationSection = styled.div`
+const AccommodationSection = styled.div`
   ${containerStyle}
   margin-top: 80px;
   margin-bottom: 80px;
@@ -52,5 +52,5 @@ const AccomodationSection = styled.div`
 `;
 
 export default {
-  AccomodationSection,
+  AccommodationSection,
 };

@@ -1,8 +1,8 @@
 {
-  "title": "Confirm your presence",
-  "content1": "RSVP here",
-  "content2": "The menu will include vegetarian and meat options.",
-  "content3": "If you have other dietary requirements (veganism, health or religion) feel free to let us know below.",
+  "title": "Let us know who's coming",
+  "content1": "Please fill in your names to register your attendance.",
+  "content2": "The base menu will already include a variety of vegetarian, fish and meat options. A special kids menu is planned for those invited below 12 years old.",
+  "content3": "If you have any other dietary requirements feel free to let us know below.",
   "namePlaceholder": "Guest name",
   "specialDietaryRequirements": "Special dietary requirements",
   "declineButton": "Regretfully decline",
