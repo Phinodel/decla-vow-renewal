@@ -48,7 +48,7 @@ export const font = {
     titlesMobile: {
       h1: '70px',
       h2: '28px',
-      h3: '65px',
+      h3: '60px',
       h4: '36px',
       h5: '32px',
       h6: '32px',
@@ -91,7 +91,7 @@ export const containerStyle = css`
   }
 
   @media (max-width: ${breakpoints.mobile}px) {
-    padding: 0 25px;
+    padding: 0 20px;
   }
 `;
 
