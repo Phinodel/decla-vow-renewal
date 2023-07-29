@@ -13,12 +13,13 @@ const textColors = {
   dark: tertiaryColor,
   light: lightGreen,
   highLight: 'rgba(201, 223, 211, 0.4)',
+  backgroundHighlight: '#fef3e2',
 };
 
 export const colors = {
   white: '#ffffff',
   black: '#000000',
-  error: '#f52d00',
+  error: '#E54F03',
   primary: primaryColor,
   secondary: secondaryColor,
   tertiary: tertiaryColor,
@@ -40,7 +41,7 @@ export const font = {
       h1: '80px',
       h2: '32px',
       h3: '72px',
-      h4: '38px',
+      h4: '45px',
       h5: '34px',
       h6: '34px',
     },
@@ -143,17 +144,33 @@ export const linkStyle = css`
 `;
 
 export const buttonStyle = css`
-  transition: all 0.5 ease;
+  transition: all 0.5s ease;
 
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 12px 25px;
   background-color: ${colors.secondary};
   color: ${colors.white};
+  text-align: center;
   border-radius: 25px;
 
   &:hover {
     background-color: ${colors.primary};
   }
+`;
+
+export const slantedStyle = css`
+  margin-top: 20px;
+  font-style: italic;
+  font-size: ${font.sizes.body.medium};
+`;
+
+export const highlightedStyle = css`
+  display: inline-block;
+  margin: 4px 0px;
+  padding: 0px 4px;
+
+  color: ${colors.secondary};
+  background-color: ${colors.text.backgroundHighlight};
 `;
 
 export default theme;

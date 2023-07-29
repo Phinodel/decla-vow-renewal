@@ -18,15 +18,15 @@ const ContactModule: FC = () => {
           </h3>
 
           <Styled.ContactDetailsWrapper>
-            <Styled.ContactDetails>
+            <div>
               <Styled.BoldTitle>Delphine Claerhout:</Styled.BoldTitle>
               <p>{t('mail')}: claerhout.delphine@gmail.com</p>
-            </Styled.ContactDetails>
+            </div>
 
-            <Styled.ContactDetails>
+            <div>
               <Styled.BoldTitle>Pierre De Conto:</Styled.BoldTitle>
               <p>{t('mail')}: pierre.deconto@gmail.com</p>
-            </Styled.ContactDetails>
+            </div>
           </Styled.ContactDetailsWrapper>
         </Styled.ContentContainer>
 
@@ -41,6 +41,26 @@ const ContactModule: FC = () => {
           <div>
             <Styled.BoldTitle>{t('invitation-question')}</Styled.BoldTitle>
             <p>{t('invitation-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('arrivalTime-question')}</Styled.BoldTitle>
+            <p>{t('arrivalTime-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('parking-question')}</Styled.BoldTitle>
+            <p>{t('parking-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('kids-question')}</Styled.BoldTitle>
+            <p>{t('kids-answer')}</p>
+          </div>
+
+          <div>
+            <Styled.BoldTitle>{t('clothing-question')}</Styled.BoldTitle>
+            <p>{t('clothing-answer')}</p>
           </div>
         </Styled.ContentContainer>
       </Styled.ContentWrapper>

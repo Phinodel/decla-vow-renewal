@@ -3,5 +3,13 @@
   "mail": "mail",
   "questions-title": "Questions fréquentes",
   "invitation-question": "Invitations officielles",
-  "invitation-answer": "Nous enverrons les invitations officielles ainsi que plus d'informations, dont l'horaire et le code vestimentaire dans quelques mois."
+  "invitation-answer": "Nous avons maintenant commencé à envoyer les invitations papiers qui indiquent le nombre de places que nous avons réservées en votre honneur. Si toutefois vous avez d'autres questions à nous poser, n'hésitez pas à nous contacter directement.",
+  "arrivalTime-question": "Quand devons-nous être sur place ?",
+  "arrivalTime-answer": "L'heure d'arrivée officielle est 16h00, mais vous êtes les bienvenus à partir de 15h45 si vous préférez être en avance. Nous vous demandons cependant de ne pas arriver plus tard que 16h20 afin que tout se déroule pour le mieux.",
+  "parking-question": "Et le parking?",
+  "parking-answer": "Le nombre de places de stationnement sur le site est extrêmement limité. Nous vous recommandons vivement de covoiturer. Il n'y a pas de parking sur place, ce qui signifie que vous devrez vous garer sur le bord de la route.",
+  "kids-question": "Les enfants sont-ils les bienvenus ?",
+  "kids-answer": "Même si quelques enfants seront présents pendant la journée, il s'agit principalement d'un événement réservé aux adultes. Pour les quelques enfants de moins de 12 ans qui sont invités, un repas spécifique sera fourni. N'hésitez pas à nous contacter pour toute question à ce sujet.",
+  "clothing-question": "Que devons-nous porter ?",
+  "clothing-answer": "En avril, le temps en Belgique est très imprévisible. Nous vous recommandons de surveiller les prévisions météorologiques. Le thème officielle est 'cocktail coloré', ce qui signifie que nous aimerions vous voir dans toutes sortes de couleurs. C'est l'occasion rêvée de sortir votre ensemble favori ou votre costume ! Nous vous demandons simplement de vous abstenir de porter du blanc, de l'or et des paillettes."
 }

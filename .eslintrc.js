@@ -19,9 +19,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:jest/recommended',
     'plugin:prettier/recommended',
     'prettier',
+    'plugin:import/recommended',
   ],
   ignorePatterns: ['src/**/generated/**/*'],
   rules: {

@@ -1,0 +1,15 @@
+{
+  "title": "Laat ons weten wie erbij kan zijn",
+  "content1": "Vul jullie namen hieronder in om jullie aanwezigheid te registreren.",
+  "content2": "Het basismenu zal al een verscheidenheid aan vegetarische, vis- en vleesopties bevatten. Er is een speciaal kindermenu gepland voor kindjes jonger dan 12 jaar.",
+  "content3": "Als je andere dieetwensen hebt, laat het ons zeker weten.",
+  "namePlaceholder": "Naam",
+  "specialDietaryRequirements": "Speciale dieetwensen",
+  "declineButton": "Met spijt weigeren",
+  "acceptButton": "Komen met plezier",
+  "closeButton": "Sluiten",
+  "errorMessage": "Er is iets fout gegaan, probeer het later nog eens...",
+  "updateMessage": "Uw antwoord is bijgewerkt, bedankt dat je het ons hebt laten weten.",
+  "savedMessageAccept": "Uw antwoord is opgeslagen, bedankt dat je het ons hebt laten weten. We kijken ernaar uit om het met jullie te vieren!",
+  "savedMessageDecline": "Uw antwoord is opgeslagen, bedankt dat je het ons hebt laten weten."
+}

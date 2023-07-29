@@ -1,0 +1,15 @@
+{
+  "title": "Dites-nous qui vient",
+  "content1": "Veuillez inscrire le nom de chaque participant.",
+  "content2": "Le menu comprends déjà une variété d'options végétariennes, de poisson et de viande. Un menu spécial pour les enfants est prévu pour les invités de moins de 12 ans.",
+  "content3": "Si vous avez d'autres restrictions alimentaires, n'hésitez pas à nous en faire part ci-dessous.",
+  "namePlaceholder": "Nom",
+  "specialDietaryRequirements": "Restrictions alimentaires",
+  "declineButton": "Décliner avec regret",
+  "acceptButton": "Accepter joyeusement",
+  "closeButton": "Fermer",
+  "errorMessage": "Un problème est survenu, veuillez réessayer plus tard...",
+  "updateMessage": "Votre réponse a été mise à jour, merci.",
+  "savedMessageAccept": "Votre réponse a été enregistrée, merci. Nous sommes impatients de célébrer avec vous!",
+  "savedMessageDecline": "Votre réponse a été enregistrée, merci."
+}
