@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import { track } from '@vercel/analytics';
 
@@ -107,6 +107,18 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
   const handleOnClose = () => {
     onClose();
   };
+
+  const handleOnKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      handleOnClose();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleOnKeyDown);
+
+    return () => window.removeEventListener('keydown', handleOnKeyDown);
+  }, []);
 
   const showUpdateMessage = guestAlreadyRSVPd;
   const showSuccessMessageAccepted = !showUpdateMessage && success && accepted;

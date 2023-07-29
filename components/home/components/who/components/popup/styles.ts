@@ -92,7 +92,7 @@ const Content = styled.div`
   > div,
   > p,
   > h4 {
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
   }

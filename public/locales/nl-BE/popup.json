@@ -1,15 +1,15 @@
 {
-  "title": "Confirm your presence",
-  "content1": "RSVP here",
-  "content2": "The menu will include vegetarian and meat options.",
-  "content3": "If you have other dietary requirements (veganism, health or religion) feel free to let us know below.",
-  "namePlaceholder": "Guest name",
-  "specialDietaryRequirements": "Special dietry requirements",
-  "declineButton": "Regretfully decline",
-  "acceptButton": "Joyfully accept",
-  "closeButton": "Close",
-  "errorMessage": "Something went wrong, please try again later",
-  "updateMessage": "Your response has been updated, thank you for letting us know.",
-  "savedMessageAccept": "Your response has been saved, thank you for letting us know. We're looking forward to celebrate with you!",
-  "savedMessageDecline": "Your response has been saved, thank you for lettings us know."
+  "title": "Laat ons weten wie erbij kan zijn",
+  "content1": "Vul jullie namen hieronder in om jullie aanwezigheid te registreren.",
+  "content2": "Het basismenu zal al een verscheidenheid aan vegetarische, vis- en vleesopties bevatten. Er is een speciaal kindermenu gepland voor kindjes jonger dan 12 jaar.",
+  "content3": "Als je andere dieetwensen hebt, laat het ons zeker weten.",
+  "namePlaceholder": "Naam",
+  "specialDietaryRequirements": "Speciale dieetwensen",
+  "declineButton": "Met spijt weigeren",
+  "acceptButton": "Komen met plezier",
+  "closeButton": "Sluiten",
+  "errorMessage": "Er is iets fout gegaan, probeer het later nog eens...",
+  "updateMessage": "Uw antwoord is bijgewerkt, bedankt dat je het ons hebt laten weten.",
+  "savedMessageAccept": "Uw antwoord is opgeslagen, bedankt dat je het ons hebt laten weten. We kijken ernaar uit om het met jullie te vieren!",
+  "savedMessageDecline": "Uw antwoord is opgeslagen, bedankt dat je het ons hebt laten weten."
 }
