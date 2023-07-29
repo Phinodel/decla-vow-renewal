@@ -1,15 +1,15 @@
 {
-  "title": "Confirm your presence",
-  "content1": "RSVP here",
-  "content2": "The menu will include vegetarian and meat options.",
-  "content3": "If you have other dietary requirements (veganism, health or religion) feel free to let us know below.",
-  "namePlaceholder": "Guest name",
-  "specialDietaryRequirements": "Special dietry requirements",
-  "declineButton": "Regretfully decline",
-  "acceptButton": "Joyfully accept",
-  "closeButton": "Close",
-  "errorMessage": "Something went wrong, please try again later",
-  "updateMessage": "Your response has been updated, thank you for letting us know.",
-  "savedMessageAccept": "Your response has been saved, thank you for letting us know. We're looking forward to celebrate with you!",
-  "savedMessageDecline": "Your response has been saved, thank you for lettings us know."
+  "title": "Dites-nous qui vient",
+  "content1": "Veuillez inscrire vos noms pour enregistrer votre participation.",
+  "content2": "Le menu de base comprendra déjà une variété d'options végétariennes, de poisson et de viande. Un menu spécial pour les enfants est prévu pour les invités de moins de 12 ans.",
+  "content3": "Si vous avez d'autres exigences alimentaires, n'hésitez pas à nous en faire part ci-dessous.",
+  "namePlaceholder": "Votre nom",
+  "specialDietaryRequirements": "Exigences diététiques particulières",
+  "declineButton": "Décliner avec regret",
+  "acceptButton": "Accepter joyeusement",
+  "closeButton": "Fermer",
+  "errorMessage": "Un problème est survenu, veuillez réessayer plus tard...",
+  "updateMessage": "Votre réponse a été mise à jour, merci de nous en informer.",
+  "savedMessageAccept": "Votre réponse a été sauvegardée, merci de nous en informer. Nous sommes impatients de célébrer avec vous!",
+  "savedMessageDecline": "Votre réponse a été sauvegardée, merci de nous en informer."
 }
