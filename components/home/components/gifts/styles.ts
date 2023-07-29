@@ -19,6 +19,11 @@ const GiftsSection = styled.div`
     width: 80%;
     max-width: 600px;
     margin: 0 auto 25px 0;
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      width: 100%;
+      max-width: auto;
+    }
   }
 `;
 

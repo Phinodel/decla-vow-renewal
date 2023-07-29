@@ -19,8 +19,13 @@ const AccommodationSection = styled.div`
 
   p {
     width: 80%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 0 25px auto;
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      width: 100%;
+      max-width: auto;
+    }
   }
 
   a {

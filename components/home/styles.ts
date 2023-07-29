@@ -6,7 +6,7 @@ const Header = styled.div`
   z-index: 101;
 
   @media (max-width: ${breakpoints.tablet}px) {
-    padding: 0 25px;
+    padding: 0 20px;
   }
 
   @media (max-width: ${breakpoints.mobile}px) {
