@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { breakpoints, buttonStyle, colors, linkStyle } from '../../../../../../styles/theme';
+import { breakpoints, buttonStyle, colors, font, linkStyle } from '../../../../../../styles/theme';
 
 const wrapperStyle = css`
   position: absolute;
@@ -33,7 +33,7 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
 
   width: 90%;
-  max-width: 700px;
+  max-width: 750px;
 
   background-color: ${colors.lightGreen};
   border-radius: 25px;
@@ -84,7 +84,7 @@ const CloseButton = styled.div`
 const Content = styled.div`
   text-align: center;
 
-  max-height: 80vh;
+  max-height: 90vh;
   overflow: scroll;
 
   padding: 45px 15px 15px;
@@ -92,39 +92,56 @@ const Content = styled.div`
   > div,
   > p,
   > h4 {
-    width: 85%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
 
   input {
-    width: 100%;
+    width: calc(100% - 75px);
     max-width: 300px;
     margin: 10px auto 15px;
+    padding-right: 75px;
   }
 `;
 
 const TextWrapper = styled.div`
   margin: 15px auto;
+  font-size: ${font.sizes.body.medium};
 `;
 
 const InputWrapper = styled.div`
   margin: 30px 0 30px;
 `;
 
+const RemoveButton = styled.div`
+  display: inline-block;
+  width: 70px;
+  margin-left: -70px;
+  font-size: ${font.sizes.body.small};
+  text-align: right;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: default !important;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+`;
+
 const AddButton = styled.div`
   transition: all 0.5s ease;
 
-  width: 35px;
-  height: 35px;
+  width: fit-content;
+  padding: 8px 20px;
   margin: 15px auto;
 
   opacity: 0.5;
+  text-align: center;
 
-  font-size: 27px;
   color: ${colors.white};
   background-color: ${colors.tertiary};
-  border-radius: 100%;
+  border-radius: 25px;
   cursor: pointer;
 
   &:hover {
@@ -158,8 +175,9 @@ const CloseButtonWrapper = styled.div`
 
 const Button = styled.div`
   ${buttonStyle}
-  width: 250px;
+  width: fit-content;
   margin: 15px auto;
+  padding: 12px 40px;
 
   &.disabled {
     cursor: default;
@@ -168,7 +186,7 @@ const Button = styled.div`
   }
 `;
 
-const Declinebutton = styled.div`
+const DeclineButton = styled.div`
   ${linkStyle}
   text-align: center;
   font-size: 14px;
@@ -201,11 +219,12 @@ export default {
   Content,
   TextWrapper,
   InputWrapper,
+  RemoveButton,
   AddButton,
   ButtonWrapper,
   CloseButtonWrapper,
   Button,
-  Declinebutton,
+  DeclineButton,
   ErrorMessage,
   SuccessMessage,
 };

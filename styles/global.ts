@@ -207,11 +207,11 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.tertiary};
     line-height: 1.4;
 
-    width: 80%;
-    max-width: 300px;
-    height: 60px;
+    width: 90%;
+    max-width: 350px;
+    height: 40px;
     margin: 0 auto;
-    padding: 10px 8px;
+    padding: 15px 12px;
 
     border-radius: 25px;
     border: 1px solid ${colors.tertiary};
