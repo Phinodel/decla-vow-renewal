@@ -10,11 +10,13 @@ interface ComponentProps {
   onClose: () => void;
 }
 
-const emptyGuest: Guest = { name: '', error: false };
+const generateId = (): string => Math.random().toString(16).slice(2);
+
+const createEmptyGuest = (): Guest => ({ name: '', error: false, id: generateId() });
 const maxGuests = 8;
 
 const Popup: FC<ComponentProps> = ({ onClose }) => {
-  const [guests, setGuests] = useState<Guest[]>([emptyGuest]);
+  const [guests, setGuests] = useState<Guest[]>([createEmptyGuest(), createEmptyGuest()]);
   const [extraData, setExtraData] = useState<ExtraGuestInfo>({ food: '' });
 
   const [guestAlreadyRSVPd, setGuestAlreadyRSVPd] = useState<boolean>(false);
@@ -26,7 +28,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
   const { t } = useTranslation('popup');
 
   const reset = () => {
-    setGuests([emptyGuest]);
+    setGuests([createEmptyGuest(), createEmptyGuest()]);
     setExtraData({ food: '' });
     setGuestAlreadyRSVPd(false);
     setShowError(false);
@@ -48,15 +50,15 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
     };
 
   const handleOnAdd = () => {
-    setGuests((oldValues) => [...oldValues, emptyGuest]);
+    setGuests((oldValues) => [...oldValues, createEmptyGuest()]);
   };
 
   const checkIfFieldsAreFilled = () => {
-    const allFilled = guests.some((e) => e.name.length > 0);
+    const containsEmpty = guests.some((e) => e.name.length === 0);
 
     setGuests((oldValues) => oldValues.map((e) => ({ ...e, error: e.name.length <= 0 })));
 
-    return allFilled;
+    return !containsEmpty;
   };
 
   const handleOnSubmit = (accepts: boolean) => async () => {
@@ -107,6 +109,9 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
   const handleOnClose = () => {
     onClose();
   };
+  const handleOnRemove = (id: string) => () => {
+    setGuests((oldValues) => oldValues.filter((e) => e.id !== id));
+  };
 
   const handleOnKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
@@ -122,7 +127,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
   const showUpdateMessage = guestAlreadyRSVPd;
   const showSuccessMessageAccepted = !showUpdateMessage && success && accepted;
-  const showSucessMessageDeclined = !showUpdateMessage && success && !accepted;
+  const showSuccessMessageDeclined = !showUpdateMessage && success && !accepted;
 
   return (
     <>
@@ -136,25 +141,29 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
             <Styled.TextWrapper>
               <p>{t('content1')}</p>
               <p>{t('content2')}</p>
-              <p>{t('content3')}</p>
             </Styled.TextWrapper>
 
             <Styled.InputWrapper>
               {guests.map((e, i) => (
-                <div key={i}>
+                <div key={e.id}>
                   <input
                     type="text"
-                    placeholder={t('namePlaceholder')}
+                    placeholder={`${t('namePlaceholder')} ${i + 1}`}
                     className={e.error ? 'error' : ''}
                     onChange={handleOnChange(i)}
                     disabled={loading}
                   />
+                  {i > 0 && (
+                    <Styled.RemoveButton className={loading ? 'disabled' : ''} onClick={handleOnRemove(e.id)}>
+                      {t('removeButton')}
+                    </Styled.RemoveButton>
+                  )}
                 </div>
               ))}
 
               {guests.length < maxGuests && (
                 <Styled.AddButton className={loading ? 'disabled' : ''} onClick={loading ? undefined : handleOnAdd}>
-                  &#43;
+                  {t('addButton')}
                 </Styled.AddButton>
               )}
             </Styled.InputWrapper>
@@ -171,7 +180,7 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
 
             {showSuccessMessageAccepted && <Styled.SuccessMessage>{t('savedMessageAccept')}</Styled.SuccessMessage>}
 
-            {showSucessMessageDeclined && <Styled.SuccessMessage>{t('savedMessageDecline')}</Styled.SuccessMessage>}
+            {showSuccessMessageDeclined && <Styled.SuccessMessage>{t('savedMessageDecline')}</Styled.SuccessMessage>}
 
             {success ? (
               <Styled.CloseButtonWrapper>
@@ -182,9 +191,9 @@ const Popup: FC<ComponentProps> = ({ onClose }) => {
             ) : (
               <Styled.ButtonWrapper>
                 <div>
-                  <Styled.Declinebutton className={loading ? 'disabled' : ''} onClick={handleOnSubmit(false)}>
+                  <Styled.DeclineButton className={loading ? 'disabled' : ''} onClick={handleOnSubmit(false)}>
                     {t('declineButton')}
-                  </Styled.Declinebutton>
+                  </Styled.DeclineButton>
                 </div>
                 <div>
                   <Styled.Button className={loading ? 'disabled' : ''} onClick={handleOnSubmit(true)}>
