@@ -3,22 +3,22 @@ import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const ContactModule = lazy(() => import('../components/contact'));
+const PicturesModule = lazy(() => import('../components/pictures'));
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'contact'])),
+      ...(await serverSideTranslations(locale || 'en-GB', ['common', 'pictures'])),
     },
   };
 };
 
-const Contact: NextPage = () => {
+const Pictures: NextPage = () => {
   return (
     <Suspense fallback={<></>}>
-      <ContactModule />
+      <PicturesModule />
     </Suspense>
   );
 };
 
-export default Contact;
+export default Pictures;
