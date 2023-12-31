@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import HomeModule from '../components/home';
+
+const HomeModule = lazy(() => import('../components/home'));
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -13,7 +14,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 };
 
 const Home: NextPage = () => {
-  return <HomeModule />;
+  return (
+    <Suspense fallback={<></>}>
+      <HomeModule />
+    </Suspense>
+  );
 };
 
 export default Home;

@@ -1,14 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC, lazy, Suspense } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import Image from 'next/image';
 import Styled from './styles';
 
 import Who from './components/who';
-import What from './components/what';
-import Where from './components/where';
-import Accommodations from './components/accommodations';
-import Gifts from './components/gifts';
+
+const What = lazy(() => import('./components/what'));
+const Where = lazy(() => import('./components/where'));
+const Accommodations = lazy(() => import('./components/accommodations'));
+const Gifts = lazy(() => import('./components/gifts'));
 
 const HomeModule: FC = () => {
   const { t } = useTranslation('home');
@@ -41,9 +42,13 @@ const HomeModule: FC = () => {
         </div>
       </Styled.GreenBackground>
 
-      <What />
+      <Suspense fallback={<></>}>
+        <What />
+      </Suspense>
 
-      <Where />
+      <Suspense fallback={<></>}>
+        <Where />
+      </Suspense>
 
       <Styled.GreenLinesBackground>
         <div>
@@ -51,9 +56,13 @@ const HomeModule: FC = () => {
         </div>
       </Styled.GreenLinesBackground>
 
-      <Accommodations />
+      <Suspense fallback={<></>}>
+        <Accommodations />
+      </Suspense>
 
-      <Gifts />
+      <Suspense fallback={<></>}>
+        <Gifts />
+      </Suspense>
 
       <Styled.LeafsBackground>
         <div>
