@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import {
-  breakpoints,
-  containerStyle,
-  titleStyle,
-  slantedStyle,
-  highlightedStyle,
-  buttonStyle,
-} from '../../../../styles/theme';
+import { breakpoints, containerStyle, titleStyle, slantedStyle, highlightedStyle } from '../../../../styles/theme';
 
 const WhoSection = styled.div`
   ${containerStyle}
@@ -38,13 +31,6 @@ const WhoSection = styled.div`
   }
 `;
 
-const Button = styled.div`
-  ${buttonStyle}
-  width: 300px;
-  margin: 15px 0;
-  position: relative;
-`;
-
 const slantedText = styled.p`
   ${slantedStyle};
 `;
@@ -55,7 +41,6 @@ const highlightedText = styled.span`
 
 export default {
   WhoSection,
-  Button,
   slantedText,
   highlightedText,
 };

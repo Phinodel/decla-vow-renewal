@@ -1,20 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'next-i18next';
 
-import Popup from './components/popup';
 import Styled from './styles';
 
 const Who: FC = () => {
-  const [showPopup, setShowPopup] = useState(false);
   const { t } = useTranslation('home');
-
-  const handleOnClick = () => {
-    setShowPopup(true);
-  };
-
-  const handleOnClosePopup = () => {
-    setShowPopup(false);
-  };
 
   return (
     <>
@@ -29,10 +19,7 @@ const Who: FC = () => {
         <p>
           <Styled.highlightedText>{t('who-text2')}</Styled.highlightedText>
         </p>
-        <Styled.slantedText>{t('who-text3')}</Styled.slantedText>
-        <Styled.Button onClick={handleOnClick}>{t('who-button')}</Styled.Button>
       </Styled.WhoSection>
-      {showPopup && <Popup onClose={handleOnClosePopup} />}
     </>
   );
 };

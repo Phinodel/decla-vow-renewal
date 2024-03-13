@@ -45,16 +45,8 @@ const Accommodations: FC = () => {
 
   const locationsLessThan2km: Accommodation[] = [
     {
-      label: `${t('accommodation-holiday-home')} Den Haegepreeck (< 8p)`,
-      url: 'https://www.haegepreeck.be',
-    },
-    {
       label: `${t('accommodation-holiday-home')} De Reus van Horebeke (< 5p)`,
       url: 'https://www.dereusvanhorebeke.be',
-    },
-    {
-      label: `${t('accommodation-holiday-home')} Gastenverblijf Buikberg (< 32p)`,
-      url: 'https://www.buikberg.com/',
     },
     {
       label: `${t('accommodation-holiday-home')} Vierkantshoeve Molenzicht`,
@@ -72,16 +64,8 @@ const Accommodations: FC = () => {
       url: 'https://www.materamabilisbb.be',
     },
     {
-      label: `${t('accommodation-bnb')} Sint-Blasiushof (Zwalm)`,
-      url: 'https://www.sintblasiushof.be',
-    },
-    {
       label: `${t('accommodation-bnb')} De Amberhoeve (Schorisse)`,
       url: 'https://www.amberhoeve.be',
-    },
-    {
-      label: `${t('accommodation-holiday-home')} De Oude Notelaer (< 5p)`,
-      url: 'https://www.deoudenotelaer.be',
     },
     {
       label: `${t('accommodation-holiday-home')} 't Heufke (Zwalm)`,
