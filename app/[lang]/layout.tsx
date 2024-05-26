@@ -40,36 +40,26 @@ export default async function Root({ children, params }: { children: React.React
   );
 }
 
+const url = 'https://www.delphine-pierre.love/';
+const urlFavicon = `${url}favicon.ico`;
+
 export const metadata: Metadata = {
   title: 'Vow renewal Delphine & Pierre',
   applicationName: 'Vow renewal Delphine & Pierre',
   description: 'Celebrate with us, 13/04/2024, vow renewal of Delphine & Pierre',
-  // : 'https://www.delphine-pierre.love/',
   authors: [{ name: 'Delphine Claerhout', url: '' }],
-  // viewport: { width: 'device-width', initialScale: 1 },
   robots: { index: false, follow: false },
-  icons: [{ rel: 'icon', url: 'https://delphine-pierre-vow-renewal.vercel.app/favicon2.ico' }],
+  icons: [{ rel: 'icon', url: urlFavicon }],
+  openGraph: {
+    type: 'website',
+    url: url,
+    title: 'Vow renewal Delphine & Pierre',
+    description: 'Celebrate with us, 13/04/2024, vow renewal of Delphine & Pierre',
+    siteName: 'Vow renewal Delphine & Pierre',
+    images: [
+      {
+        url: urlFavicon,
+      },
+    ],
+  },
 };
-
-// todo meta
-// translations
-// const websiteUrl = 'https://delphine-pierre-vow-renewal.vercel.app/';
-// const websiteImage = `${websiteUrl}favicon2.ico`;
-
-// <meta property="og:url" content={websiteUrl} />
-// <meta property="og:title" content={dictionary.title} />
-// <meta property="og:description" content={dictionary.description} />
-
-// <meta property="og:image" itemProp="image" content={websiteImage} />
-// <meta property="twitter:image" content={websiteImage} />
-// <meta name="msapplication-TileImage" content={websiteImage} />
-
-// <meta property="og:image:type" content="image/png" />
-// <meta property="og:image:width" content="180" />
-// <meta property="og:image:height" content="180" />
-
-// <meta property="og:site_name" content={dictionary.title} />
-// <meta property="og:type" content="website" />
-// <meta property="og:updated_time" content={`${Date.now()}`} />
-
-// todo analytics
