@@ -2,6 +2,7 @@
 
 import React, { FC, useState, useEffect } from 'react';
 import Image from 'next/image';
+import { track } from '@vercel/analytics';
 
 import { ImageObject } from './types';
 import './styles.scss';
@@ -15,12 +16,16 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
     setZoomedImageIndex(index);
 
     document?.querySelector('body')?.classList.add('no-scroll');
+
+    track('onZoom', { index: index });
   };
 
   const handleOnClose = () => {
     setZoomedImageIndex(-1);
     setLoading(false);
     document?.querySelector('body')?.classList.remove('no-scroll');
+
+    track('onZoomClose', { activeIndex: zoomedImageIndex });
   };
 
   const onDownload = (url: string, filename: string) => () => {
@@ -33,16 +38,20 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
     element.click();
 
     document.body.removeChild(element);
+
+    track('onDownload', { zoomedImageIndex, url, filename });
   };
 
   const showPrevious = () => {
     if (zoomedImageIndex > 0) {
       handleOnZoom(zoomedImageIndex - 1)();
+      track('showPrevious');
     }
   };
 
   const showNext = () => {
     handleOnZoom(zoomedImageIndex + 1)();
+    track('showNext');
   };
 
   const handleKeydown = (event: KeyboardEvent) => {
