@@ -1,0 +1,19 @@
+.translation-container {
+  min-height: calc(100dvh - 625px);
+  margin-bottom: 20px;
+
+  .generic-title {
+    margin: 40px 0 15px;
+  }
+
+  p {
+    max-width: 810px;
+    margin: 15px 0;
+
+    &.subtitle {
+      font-weight: 500;
+      margin: 40px 0 5px;
+      color: var(--tertiary-color);
+    }
+  }
+}
