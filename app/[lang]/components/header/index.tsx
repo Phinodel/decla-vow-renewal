@@ -11,7 +11,9 @@ import './styles.scss';
 
 import imagePlaceholders from './imagePlaceholders.json';
 
-const pictureLinks = [
+type KeyType = keyof Awaited<ReturnType<typeof getDictionary>>['common'];
+
+const pictureLinks: { key: KeyType; url: string }[] = [
   {
     key: 'arrival',
     url: '/pictures/arrival',
@@ -59,7 +61,7 @@ const Header = ({
     return '';
   };
 
-  const generatePictureLink = (key: string, url: string) => (
+  const generatePictureLink = (key: KeyType, url: string) => (
     <li key={key}>
       <div className="link-container">
         <Link

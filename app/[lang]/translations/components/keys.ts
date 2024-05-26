@@ -1,12 +1,16 @@
+import { type getDictionary } from '../../../../get-dictionary';
+
+type KeyType = keyof Awaited<ReturnType<typeof getDictionary>>['translations'];
+
 interface TextKeysType {
-  title: string;
+  title: KeyType;
   text: TextContentType[];
 }
 
 interface TextContentType {
   name: string;
-  key?: string;
-  text: string[];
+  key?: KeyType;
+  text: KeyType[];
 }
 
 export const textKeys: TextKeysType[] = [
