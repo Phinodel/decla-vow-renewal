@@ -50,8 +50,13 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
   };
 
   const showNext = () => {
-    handleOnZoom(zoomedImageIndex + 1)();
-    track('showNext');
+    if (zoomedImageIndex < images.length - 1) {
+      handleOnZoom(zoomedImageIndex + 1)();
+      track('showNext');
+    } else {
+      handleOnClose();
+      track('showNext close');
+    }
   };
 
   const handleKeydown = (event: KeyboardEvent) => {
@@ -133,7 +138,7 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
               <div className="zoomed-image-next-button">
                 <div
                   onClick={showNext}
-                  className={zoomedImageIndex < images.length ? 'button dark' : 'button dark disabled'}>
+                  className={zoomedImageIndex < images.length - 1 ? 'button dark' : 'button dark disabled'}>
                   <Image src="/images/next.svg" alt="next" width={25} height={25} />
                 </div>
               </div>
@@ -158,24 +163,21 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
       )}
 
       <div className="images-container">
-        {images.map(
-          (img: ImageObject, index: number) =>
-            img.size > 0 && (
-              <div className="image-wrapper" key={img.pathname + index}>
-                <Image
-                  priority={index < 8}
-                  loading={index < 8 ? 'eager' : 'lazy'}
-                  quality={50}
-                  width={640 / 2.1}
-                  height={427 / 2.1}
-                  style={{ objectFit: 'contain' }}
-                  alt={`${id}-${index}`}
-                  src={img.url}
-                  onClick={handleOnZoom(index)}
-                />
-              </div>
-            ),
-        )}
+        {images.map((img: ImageObject, index: number) => (
+          <div className="image-wrapper" key={img.pathname + index}>
+            <Image
+              priority={index < 8}
+              loading={index < 8 ? 'eager' : 'lazy'}
+              quality={50}
+              width={640 / 2.1}
+              height={427 / 2.1}
+              style={{ objectFit: 'contain' }}
+              alt={`${id}-${index}`}
+              src={img.url}
+              onClick={handleOnZoom(index)}
+            />
+          </div>
+        ))}
       </div>
     </>
   );

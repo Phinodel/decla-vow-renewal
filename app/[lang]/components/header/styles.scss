@@ -139,10 +139,15 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   text-align: center;
 
   background-color: rgba(92, 92, 92, 0.05);
+
+  @media (max-width: 394px) {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
 
   @media (max-width: 760px) {
     padding: 0 50px;

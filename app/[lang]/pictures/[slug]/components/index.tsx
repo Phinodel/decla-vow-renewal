@@ -15,7 +15,7 @@ const PictureGalleryModule: FC<{ slug?: string }> = ({ slug }) => {
 
     if (result?.images) {
       setSelectedId(folderId);
-      setImagesFileNames(result.images);
+      setImagesFileNames(result.images.filter((e: ImageObject) => e.size > 0));
     }
   };
 
