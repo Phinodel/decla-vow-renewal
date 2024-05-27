@@ -1,6 +1,10 @@
 import React from 'react';
 import { i18n, type Locale } from '../../i18n-config';
 import type { Metadata } from 'next';
+
+// eslint-disable-next-line import/no-unresolved
+import { Analytics } from '@vercel/analytics/react';
+
 import Header from './components/header';
 import Footer from './components/footer';
 import { getDictionary } from '../../get-dictionary';
@@ -35,6 +39,7 @@ export default async function Root({ children, params }: { children: React.React
         <Header activeLocale={params.lang} dictionary={dictionary.common} />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
