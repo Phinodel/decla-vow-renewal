@@ -2,12 +2,14 @@
 
 import React, { FC, useState, useEffect } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { track } from '@vercel/analytics';
 
 import { ImageObject } from './types';
 import './styles.scss';
 
 const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
+  const pathname = usePathname();
   const [loading, setLoading] = useState<boolean>(false);
   const [zoomedImageIndex, setZoomedImageIndex] = useState<number>(-1);
 
@@ -17,7 +19,7 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
 
     document?.querySelector('body')?.classList.add('no-scroll');
 
-    track('onZoom', { index: index });
+    track('onZoom', { index: index, pathname });
   };
 
   const handleOnClose = () => {
@@ -25,10 +27,10 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
     setLoading(false);
     document?.querySelector('body')?.classList.remove('no-scroll');
 
-    track('onZoomClose', { activeIndex: zoomedImageIndex });
+    track('onZoomClose', { activeIndex: zoomedImageIndex, pathname });
   };
 
-  const onDownload = (url: string, filename: string) => () => {
+  const onDownload = (url: string, filename: string, imgPathname: string) => () => {
     const element = document.createElement('a');
     element.setAttribute('href', url);
     element.setAttribute('download', filename);
@@ -39,23 +41,23 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
 
     document.body.removeChild(element);
 
-    track('onDownload', { zoomedImageIndex, url, filename });
+    track('onDownload', { zoomedImageIndex, url, filename, imgPathname });
   };
 
   const showPrevious = () => {
     if (zoomedImageIndex > 0) {
       handleOnZoom(zoomedImageIndex - 1)();
-      track('showPrevious');
+      track('showPrevious', { pathname });
     }
   };
 
   const showNext = () => {
     if (zoomedImageIndex < images.length - 1) {
       handleOnZoom(zoomedImageIndex + 1)();
-      track('showNext');
+      track('showNext', { pathname });
     } else {
       handleOnClose();
-      track('showNext close');
+      track('showNext close', { pathname });
     }
   };
 
@@ -148,7 +150,11 @@ const Gallery: FC<{ images: ImageObject[]; id: string }> = ({ images, id }) => {
               {!loading && (
                 <div
                   className="button dark"
-                  onClick={onDownload(images[zoomedImageIndex].downloadUrl, `${id}-${zoomedImageIndex}`)}>
+                  onClick={onDownload(
+                    images[zoomedImageIndex].downloadUrl,
+                    `${id}-${zoomedImageIndex}`,
+                    images[zoomedImageIndex].pathname,
+                  )}>
                   <Image
                     src="/images/downloadWhite.svg"
                     alt={`download image ${id}-${zoomedImageIndex}`}
