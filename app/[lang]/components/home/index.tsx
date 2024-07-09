@@ -14,9 +14,7 @@ const HomeModule = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof getD
       </h1>
       <p>{dictionary.text1}</p>
       <p>{dictionary.text2}</p>
-      <p>
-        {dictionary.text3} <a href="mailto:claerhout.deconto@gmail.com">claerhout.deconto@gmail.com</a>
-      </p>
+      <p>{dictionary.text3}</p>
       <p>{dictionary.text4} </p>
       <p>{dictionary.text5}</p>
       <p>Delphine &amp; Pierre</p>

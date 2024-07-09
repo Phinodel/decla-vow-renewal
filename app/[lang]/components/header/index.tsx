@@ -11,39 +11,6 @@ import './styles.scss';
 
 import imagePlaceholders from './imagePlaceholders.json';
 
-type KeyType = keyof Awaited<ReturnType<typeof getDictionary>>['common'];
-
-const pictureLinks: { key: KeyType; url: string }[] = [
-  {
-    key: 'arrival',
-    url: '/pictures/arrival',
-  },
-  {
-    key: 'getting-ready',
-    url: '/pictures/getting-ready',
-  },
-  {
-    key: 'ceremony',
-    url: '/pictures/ceremony',
-  },
-  {
-    key: 'reception',
-    url: '/pictures/reception',
-  },
-  {
-    key: 'photoshoot',
-    url: '/pictures/photoshoot',
-  },
-  {
-    key: 'dinner',
-    url: '/pictures/dinner',
-  },
-  {
-    key: 'after-party',
-    url: '/pictures/after-party',
-  },
-];
-
 const Header = ({
   activeLocale,
   dictionary,
@@ -52,28 +19,6 @@ const Header = ({
   dictionary: Awaited<ReturnType<typeof getDictionary>>['common'];
 }) => {
   const pathname = usePathname();
-
-  const getActiveClass = (url: string) => {
-    if (pathname === `/${activeLocale}${url}`) {
-      return 'active';
-    }
-
-    return '';
-  };
-
-  const generatePictureLink = (key: KeyType, url: string) => (
-    <li key={key}>
-      <div className="link-container">
-        <Link
-          className={`generic-link ${getActiveClass(url)}`}
-          scroll={false}
-          href={`/${activeLocale}/${url}`}
-          locale={activeLocale}>
-          {dictionary[key]}
-        </Link>
-      </div>
-    </li>
-  );
 
   const isHomePage = () => {
     if (pathname === '/') {
@@ -144,23 +89,12 @@ const Header = ({
         <ul className="main-nav">
           <li>
             <div className="link-container">
-              <Link className="generic-link" href={`/${activeLocale}/pictures/arrival`} locale={activeLocale}>
-                {dictionary.pictures}
-              </Link>
-            </div>
-          </li>
-          <li>
-            <div className="link-container">
               <Link className="generic-link" href={`/${activeLocale}/translations`} locale={activeLocale}>
                 {dictionary.translations}
               </Link>
             </div>
           </li>
         </ul>
-
-        {pathname?.includes('pictures') && (
-          <ul className="sub-nav">{pictureLinks.map((e) => generatePictureLink(e.key, e.url))}</ul>
-        )}
       </nav>
     </>
   );
